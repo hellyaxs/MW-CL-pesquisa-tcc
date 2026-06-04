@@ -1,0 +1,232 @@
+%------------------------------------------------------------------------
+% Orientações Gerais
+%------------------------------------------------------------------------
+
+\chapter{ORIENTAÇÕES GERAIS}
+\label{chap:orientacoes}
+
+% ILUSTRAÇÕES
+\section{Ilustrações}
+\label{sec:ilustracoes}
+
+A seguir exemplifica-se como inserir ilustrações no corpo do trabalho. As ilustrações serão indexadas automaticamente em suas respectivas listas. A numeração sequencial de figuras, tabelas e equações também ocorre de modo automático.
+
+Referências cruzadas são obtidas por meio dos comandos \verb|\label{}| e \verb|\ref{}|. Sendo assim, não é necessário, por exemplo, saber que o número de certo capítulo é \ref{chap:orientacoes} para colocar o seu número no texto. Outra forma que pode ser utilizada é esta: \autoref{chap:orientacoes}, facilitando a inserção, remoção e manejo de elementos numerados no texto sem a necessidade de renumerar todos esses elementos.
+
+% FIGURAS
+\section{Figuras}
+\label{sec:figuras}
+
+Exemplo de como inserir uma figura. A \autoref{fig:figura-exemplo1} aparece automaticamente na lista de figuras. Os arquivos das figuras devem ser armazenados no diretório de "/Figuras". Para saber mais sobre o uso de imagens no \LaTeX{} consulte literatura especializada \cite{GOOSSENS_2007}.
+
+\begin{figure}[!htb]
+    \centering
+    \caption{Exemplo de Figura}
+    \includegraphics[width=0.7\textwidth]{Figuras/Figura2}
+    \caption*{Fonte: Adaptado de \citeonline[p.~19]{NUNES_2014}}
+    \label{fig:figura-exemplo1}
+\end{figure}
+
+% TABELAS
+\section{Tabelas}
+\label{sec:tabelas}
+
+Exemplo de como inserir a \autoref{tab:tabela-exemplo1}, que aparece automaticamente na sua lista. O número da tabela e o título vem acima da tabela, e a fonte, deve vir abaixo. Para saber mais informações sobre a construção de tabelas no \LaTeX{} consulte literatura especializada \cite{MITTELBACH_2004}.
+
+\begin{table}[!htb]
+    \centering
+    \caption{Tabela exemplo.}
+    \label{tab:tabela-exemplo1}
+    \begin{tabular}{l|rrr|c|c}
+        & Valores 1 & Valores 2 & Valores 3 & Total & Total Geral \\ \hline
+        Caso 1 &  86 &  77 &  81 & 244 & \multirow{3}{*}{660}\\
+        Caso 2 &  19 &  74 &  25 & 118 & \\
+        Caso 3 & 100 &  98 & 100 & 298 & \\
+    \end{tabular}
+    \vspace{0.5pt}\caption*{Fonte: Elaboração própria.}
+\end{table}
+
+% EQUAÇÕES
+\section{Equações}
+\label{sec:equacoes}
+
+Exemplo de como inserir a \autoref{eq:equacao-exemplo1} e a Eq. \ref{eq:equacao-exemplo2} no corpo do texto. Observe que foram utilizadas duas formas distintas para referenciar as equações.
+
+\begin{equation}
+    X(s) = \int\limits_{t = -\infty}^{\infty} x(t) \, \text{e}^{-st} \, dt
+    \label{eq:equacao-exemplo1}
+\end{equation}
+
+\begin{equation}
+    F(u, v) = \sum_{m = 0}^{M - 1} \sum_{n = 0}^{N - 1} f(m, n) \exp \left[ -j 2 \pi \left( \frac{u m}{M} + \frac{v n}{N} \right) \right]
+    \label{eq:equacao-exemplo2}
+\end{equation}
+
+% ALGORITMOS
+\section{Algoritmos}
+\label{sec:algoritmos}
+
+Exemplo de como inserir um algoritmo. Para inserção de algoritmos utiliza-se o pacote {\ttfamily algorithm2e} que já está devidamente configurado dentro do template. 
+
+\begin{algorithm}[ht]
+    \SetKwInOut{Input}{input}
+    \SetKwInOut{Output}{output}
+    \SetKw{KwRetorna}{return}
+    \Input{$s', l, u, step$}
+    \Output{Refined solution $s''$}
+    $s'' \leftarrow s'$;
+    $improve \leftarrow TRUE$;
+    \While{$improve$}{
+        $improve \leftarrow FALSE$;
+        \For{$i \in s'$}{
+            Let $s_{+}'$ be the result of adding the value $step$ to position $i$ of solution $s'$\;
+                \If{$l(i) \leq s_{+}'(i) \leq u(i)$}{
+                    \If{$f(s_{+}') < f(s'')$}{    			   
+                        $s'' \leftarrow s_{+}'$;
+                        }
+		      }
+        }    
+        \If{$f(s'') < f(s')$}{
+            $s' \leftarrow s''$;
+		    $improve \leftarrow TRUE$;
+        }
+    }
+    \KwRetorna $s''$\;
+    \caption{Local search procedure}
+    \label{alg:busca_local}
+\end{algorithm}
+
+% LISTAS
+\section{Listas}
+\label{sec:lista}
+
+Para construir listas de "\textit{bullets}"{} ou listas enumeradas, inclusive listas aninhadas, é utilizado o pacote \verb|paralist|.
+
+\subsection{Comando \textit{itemize}}
+Exemplo de duas listas não numeradas aninhadas, utilizando o comando \verb|\itemize|. Observe a indentação, bem como a mudança automática do tipo de "\textit{bullet}"{} nas listas aninhadas.
+
+\begin{itemize}
+    \item item não numerado 1
+    \item item não numerado 2
+    \begin{itemize}
+        \item subitem não numerado 1
+        \item subitem não numerado 2
+        \item subitem não numerado 3
+    \end{itemize}
+    \item item não numerado 3
+\end{itemize}
+
+\subsection{Comando \textit{enumerate}}
+Exemplo de duas listas numeradas aninhadas, utilizando o comando \verb|\enumerate|. Observe a numeração progressiva e indentação das listas aninhadas.
+
+\begin{enumerate}
+    \item item numerado 1
+    \item item numerado 2
+    \begin{enumerate}
+        \item subitem numerado 1
+        \item subitem numerado 2
+        \item subitem numerado 3
+    \end{enumerate}
+    \item item numerado 3
+\end{enumerate}
+
+% CITAÇÕES
+\section{Citações}
+\label{sec:citacoes}
+
+Citações são trechos de texto ou informações obtidas de materiais consultados quando da elaboração do trabalho. São utilizadas no texto com o propósito de esclarecer, completar e embasar as ideias do autor. Todas as publicações consultadas e utilizadas (por meio de citações) devem ser listadas, obrigatoriamente, nas referências bibliográficas, para preservar os direitos autorais. São classificadas em citações indiretas e diretas.
+
+\subsection{Citações indiretas}
+\label{subsec:citacoes_indiretas}
+
+É a transcrição, com suas próprias palavras, das ideias de um autor, mantendo-se o sentido original. A citação indireta é a maneira que o pesquisador tem de ler, compreender e gerar conhecimento a partir do conhecimento de outros autores. Quanto à chamada da referência, ela pode ser feita de duas maneiras distintas, conforme o nome do(s) autor(es) façam parte do seu texto ou não. Exemplo de chamada fazendo parte do texto: \\
+\\Enquanto \citeonline{MATURANA_2003} defendem uma epistemologia baseada na biologia. Para os autores, é necessário rever \ldots.\\
+
+A chamada de referência foi feita com o comando \verb|\citeonline{chave}|, que produzirá a formatação correta.
+
+A segunda forma de fazer uma chamada de referência deve ser utilizada quando se quer evitar uma interrupção na sequência do texto, o que poderia, eventualmente, prejudicar a leitura. Assim, a citação é feita e imediatamente após a obra referenciada deve ser colocada entre parênteses. Porém, neste caso específico, o nome do autor deve vir em caixa alta, seguido do ano da publicação. Exemplo de chamada não fazendo parte do texto: \\
+\\Há defensores da epistemologia baseada na biologia que argumentam em favor da necessidade de \ldots \cite{MATURANA_2003}.\\
+
+Nesse caso a chamada de referência deve ser feita com o comando \verb|\cite{chave}|, que produzirá a formatação correta.
+
+\subsection{Citações Diretas}
+\label{subsec:citacoes_diretas}
+
+É a transcrição ou cópia de um parágrafo, de uma frase, de parte dela ou de uma expressão, usando exatamente as mesmas palavras adotadas pelo autor do trabalho consultado.
+
+Quanto à chamada da referência, ela pode ser feita de qualquer das duas maneiras já mencionadas nas citações indiretas, conforme o nome do(s) autor(es) façam parte do texto ou não. Há duas maneiras distintas de se fazer uma citação direta, conforme o trecho citado seja longo ou curto.
+
+Quando o trecho citado é longo (4 ou mais linhas) deve-se usar um parágrafo específico para a citação, na forma de um texto recuado (4 cm da margem esquerda), com tamanho de letra menor e espaçamento entrelinhas simples. Exemplo de citação longa:
+
+\begin{adjustwidth}{4cm}{}
+    \SingleSpacing
+    \small
+    Desse modo, opera-se uma ruptura decisiva entre a reflexividade filosófica, isto é a possibilidade do sujeito de pensar e de refletir, e a objetividade científica. Encontramo-nos num ponto em que o conhecimento científico está sem consciência. Sem consciência moral, sem consciência reflexiva e também subjetiva. Cada vez mais o desenvolvimento extraordinário do conhecimento científico vai tornar menos praticável a própria possibilidade de reflexão do sujeito sobre a sua pesquisa \cite[p.~28]{SILVA_2000}.
+\end{adjustwidth}
+
+Para fazer a citação longa deve-se utilizar os seguintes comandos:
+\begin{verbatim}
+\begin{adjustwidth}{4cm}{}
+    \SingleSpacing
+    \small
+    <texto da citacao>
+\end{adjustwidth}
+\end{verbatim}
+
+%Para fazer a citação longa deve-se utilizar os seguintes comandos:
+%\begin{verbatim}
+%\begin{citacao}
+%<texto da citacao>
+%\end{citacao}
+%\end{verbatim}
+
+No exemplo acima, para a chamada da referência o comando \verb|\cite[p.~28]{SILVA_2000}| foi utilizado, visto que os nomes dos autores não são parte do trecho citado. É necessário também indicar o número da página da obra citada que contém o trecho citado.
+
+Quando o trecho citado é curto (3 ou menos linhas) ele deve inserido diretamente no texto entre aspas. Exemplos de citação curta: \\
+\\A epistemologia baseada na biologia parte do princípio de que "assumo que não posso fazer referência a entidades independentes de mim para construir meu explicar" \cite[p.~35]{MATURANA_2003}. \\
+\\A epistemologia baseada na biologia de \citeonline[p.~35]{MATURANA_2003} parte do princípio de que "assumo que não posso fazer referência a entidades independentes de mim para construir meu explicar".
+
+\subsection{Detalhes sobre as chamadas de referências}
+\label{subsec:chamadas_referencias}
+
+Outros exemplos de comandos para as chamadas de referências e o resultado produzido por estes: \\
+\\\citeonline{MATURANA_2003} \ \ \  \verb|\citeonline{MATURANA_2003}|\\
+\citeonline{SILVA_2000} \ \ \   \verb|\citeonline{SILVA_2000}|\\
+\cite[p.~28]{SILVA_2000} \ \ \  \verb|\cite[p.~28]{SILVA_2000}|\\
+\citeonline[p.~33]{SILVA_2000} \ \ \   \verb|\citeonline[p.~33]{SILVA_2000}|\\
+\cite[p.~35]{MATURANA_2003} \ \ \   \verb|\cite[p.~35]{MATURANA_2003}|\\
+\citeonline[p.~35]{MATURANA_2003} \ \ \   \verb|\citeonline[p.~35]{MATURANA_2003}|\\
+\cite{SILVA_2000,MATURANA_2003} \ \ \   \verb|\cite{SILVA_2000,MATURANA_2003}|\\
+
+\subsection{Referências Bibliográficas}
+\label{subsec:referencias_bibliograficas}
+
+A bibliografia é feita no padrão \textsc{Bib}\TeX{}. As referências são colocadas em um arquivo separado. Neste template as referências são armazenadas no arquivo "referencias.bib".
+
+Existem diversas categorias documentos e materiais componentes da bibliografia. A classe abn\TeX{} define as seguintes categorias (entradas):
+
+\begin{verbatim}
+@book
+@inbook
+@article
+@phdthesis
+@mastersthesis
+@monography
+@techreport
+@manual
+@proceedings
+@inproceedings
+@journalpart
+@booklet
+@patent
+@unpublished
+@misc
+\end{verbatim}
+
+Cada categoria (entrada) é formatada pelo pacote \verb|abntex2| de uma forma específica. Algumas entradas foram introduzidas especificamente para atender à norma \textbf{NBR6023:2002}, são elas: \verb|@monography|, \verb|@journalpart|,\verb|@patent|. As demais entradas são padrão \textsc{Bib}\TeX{}.
+
+% NOTAS DE RODAPÉ
+\section{Notas de Rodapé}
+\label{sec:notas_rodape}
+
+As notas de rodapé pode ser classificadas em duas categorias: notas explicativas\footnote{é o tipo mais comum de notas que destacam, explicam e/ou complementam o que foi dito no corpo do texto, como esta nota de rodapé, por exemplo.} e notas de referências. A notas de referências, como o próprio nome já indica, são utilizadas para colocar referências e/ou chamadas de referências sob certas condições.

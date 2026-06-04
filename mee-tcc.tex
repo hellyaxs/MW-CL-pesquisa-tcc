@@ -1,0 +1,105 @@
+% TEMPLATE PARA TCC 
+% Unidade Acadêmcia de Belo Jardim (UABJ) - UFRPE
+% Belo Jardim - 2025
+% Moisés Tavares
+
+% Baseado no projeto: 
+% http://tcc.tsi.gp.utfpr.edu.br/paginas/modelos-latex-da-utfpr
+% De: Diego Marczal e Michael Vornes
+% Template para TCC - Universidade Federal do Pará
+% De: Sérgio Custódio e Kelvin Pinheiro
+
+\documentclass[a4paper, oneside, english, brazil, 12pt]{tccufrpe}
+% oneside = Impresssão apenas na frente
+% twoside = Impressão em frente e verso
+\usepackage{setspace}
+
+%-----------------------------------------------------------------------
+% PREENCHER OS CAMPOS ABAIXO:
+%-----------------------------------------------------------------------
+
+\titulo{Avaliação do Impacto do ChatGPT na Aprendizagem de Heap e Tabelas Hash em Algoritmos e Estruturas de Dados}
+%\subtitulo{subtítulo (se houver)} % Se não houver, deixar comentado (%)
+
+\autor{Elias Vitor da Silva} 
+
+\local{Belo Jardim} % separar por vírgula, caixa baixa
+\data{09}{2025}
+\diadefesa{02}
+
+\projeto{Trabalho de Conclusão de Curso}
+% Preencher com uma das opções: Projeto / Relatório dos resultados parciais / Trabalho de conclusão de curso
+
+\tituloTCC{Avaliação do Impacto do ChatGPT na Aprendizagem de Heap e Tabelas Hash em Algoritmos e Estruturas de Dados}
+
+% Dados do Orientador
+\orientador{Prof. Dr. Waldemar Neto} % Para orientadora, usar opção abaixo
+%\orientador[Orientadora:]{Profa. Nome completo da orientadora}
+\instOrientador{Universidade Federal Rural de Pernambuco}
+
+% Dados do Coorientador
+% Se não houver, será necessário comentar o trecho no arquivo "tccufrpe.cls" (linhas 329-331), além do trecho abaixo
+\coorientador{(Se houver) Nome completo do (a) coorientador (a)} % Para coorientadora, usar opção abaixo
+%\coorientador[Coorientadora:]{Profa. Nome completo da coorientadora}
+
+
+% Dados da banca
+\nomePrimeiromembro{Prof. D.Sc. Texto Texto Texto (Examinador Interno)}
+\instPrimeiromembro{Universidade Federal Rural de Pernambuco}
+ 
+\nomeSegundomembro{Prof. D.Sc. Texto Texto Texto (Examinador Externo)}
+\instSegundomembro{Universidade Texto Texto}
+
+% Para incluir um terceiro membro na banca, será necessário "descomentar" o trecho no arquivo "tccufrpe.cls" (linhas 341-343)
+%\nomeTerceiromembro{Prof. Nome do terceiro Avaliador (se houver)}
+%\tituloTerceiromembro{Titulação}
+%\instTerceiromembro{Instituição (SIGLA)}
+
+%-----------------------------------------------------------------------
+% ESTRUTURA DO DOCUMENTO (cuidado ao realizar modificações)
+%-----------------------------------------------------------------------
+
+\begin{document}
+	\pretextual
+	\imprimircapa
+    \imprimirfolhaderosto{}
+    %\includepdf{fichacatalográfica.pdf}
+    
+    \imprimirfolhadeaprovacao{}
+    % Este comando insere uma Folha de aprovação em branco, elemento obrigatório da NBR 14724/2011. Você pode utilizar este modelo até a aprovação do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma imagem da página assinada pela banca com o comando abaixo:
+    %\includepdf{folhadeaprovacao_final.pdf}
+
+    \include{Textos/pre-textuais/dedicatoria} % opcional
+	\include{Textos/pre-textuais/agradecimentos}
+	\include{Textos/pre-textuais/epigrafe} % opcional
+
+    \OnehalfSpacing
+    \include{Textos/pre-textuais/resumo}
+	\include{Textos/pre-textuais/abstract}
+	
+    \listoffigures*
+    \newpage
+    \listoftables*
+    %\listofalgorithms
+    \include{Textos/pre-textuais/lista-siglas}
+    \include{Textos/pre-textuais/lista-simbolos}
+    \tableofcontents*
+    \newpage
+    
+	\textual
+	\include{Textos/textuais/1-Introducao}
+	\include{Textos/textuais/2-ReferencialTeórico}
+	\include{Textos/textuais/3-Metodologia}
+	\include{Textos/textuais/4-ResultadosDiscussões}
+	\include{Textos/textuais/5-Conclusões}    
+
+    % Orientações de uso do Template - Após leitura, a linha abaixo deve ser comentada
+	\include{Textos/Orientacoes}
+	
+	\postextual
+    \bibliography{referencias}
+    \bibliographystyle{abntex2-alf}
+	
+	\include{Textos/pos-textuais/apendices} % Opcional (apêndices)
+	\include{Textos/pos-textuais/anexos} % Opcional (anexos)
+\end{document}
