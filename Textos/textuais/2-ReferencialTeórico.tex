@@ -3,63 +3,85 @@
 \chapter{REFERENCIAL TEÓRICO}
 \label{chap:referencial-teorico}
 
-Demonstrar os assuntos relevantes à temática da pesquisa proposta, com base em publicações técnicas e científicas, sobretudo artigos científicos nacionais e internacionais, preferencialmente aqueles publicados nos últimos 10 anos. Deve contemplar, de maneira clara e objetiva, os elementos conceituais e a fundamentação teórica e científica que sejam importantes para respaldar a pesquisa, bem como servir de apoio para os procedimentos metodológicos inerentes ao tema proposto e para a interpretação dos resultados. 
+Este capítulo apresenta os principais conceitos que fundamentam a pesquisa. Inicialmente, discute-se a relevância de Algoritmos e Estruturas de Dados na formação em Computação, com ênfase nos conteúdos de Heap e Tabelas Hash. Em seguida, são abordadas as possibilidades e os riscos associados ao uso de inteligência artificial generativa, especialmente o ChatGPT, em atividades de programação. Por fim, são apresentados trabalhos relacionados e conceitos associados à análise de similaridade de código, aspecto importante para interpretar a produção dos estudantes em atividades práticas.
 
-As citações diretas longas (com mais de três linhas) devem constituir um parágrafo independente, recuado 4 cm da margem esquerda, justificado, fonte Arial ou Times New Roman, tamanho 10 e espaçamento 1 (simples) entre linhas, dispensando as aspas. É preciso indicar, obrigatoriamente, a fonte consultada, com o(s) nome(s) do(s) autor(es), ano de publicação e página. Caso o original contenha uma citação com uso de aspas, empregar aspas simples.
+\section{Algoritmos e Estruturas de Dados}
+\label{sec:algoritmos-estruturas-dados}
 
-\begin{adjustwidth}{4cm}{}
-    \SingleSpacing
-    \small
-    A NBR 10520 (ABNT, 2002b) recomenda, para as citações longas, o uso de recuo sem aspas; no entanto, quando houver necessidade de, no meio de uma citação longa, fazer-se uma interrupção para introduzir um comentário do autor, é preferível fechar a citação com aspas, fazer o comentário e abrir uma nova citação com aspas. (FRANÇA; VASCONCELLOS, 2013, p. 137).
-    \vspace{0.4cm}
-\end{adjustwidth}
+Algoritmos e Estruturas de Dados compõem uma base essencial para cursos de Computação e Engenharia de Software. As diretrizes curriculares de Engenharia de Software destacam algoritmos, estruturas de dados e complexidade computacional como parte da área de fundamentos de Computação, necessária para que o estudante compreenda como projetar soluções eficientes, analisar custos computacionais e selecionar estruturas adequadas a diferentes problemas \cite{leblanc2015se2014}. De modo semelhante, Cormen et al. apresentam estruturas de dados como instrumentos centrais para organizar informações e apoiar algoritmos em operações de busca, inserção, remoção, ordenação e recuperação de dados \cite{cormen2022introduction}.
 
-\noindent \textcolor{cyan}{(No corpo do trabalho, tanto nas ilustrações como nas tabelas, a identificação aparece na parte superior. Na parte inferior, indica-se a fonte consultada – obrigatório, mesmo que seja produção de própria autoria conforme exemplo acima.)
-\\
-(A numeração das ilustrações deve ser sequencial (Figura \ref{fig:FIGURA1}, Figura \ref{fig:FIGURA2}), de acordo com a ordem que aparece no texto. Ao longo do texto, os títulos das ilustrações devem ser escritos da mesma forma e com os mesmos destaques gráficos (negrito, itálico, sublinhado, etc) que na lista de ilustrações. O mesmo acontece para as tabelas.)
-}
+A aprendizagem desses conteúdos exige a articulação entre conceitos teóricos e implementação prática. Não basta memorizar a definição de uma estrutura; é necessário compreender suas invariantes, suas operações, seus custos assintóticos e os cenários em que sua aplicação é mais adequada. Essa exigência torna a disciplina particularmente relevante para investigar o impacto de ferramentas de apoio à programação, pois atividades práticas podem revelar tanto compreensão conceitual quanto dependência de soluções externas.
 
-\begin{figure}[!ht]
-    \SingleSpacing
-	\centering
-	\caption{Nuvem de Tags dos PPCs das licenciaturas em Ciências Biológicas, Física e Química da UFRPE}
-	\includegraphics[scale=1.5]{Figuras/Figura1.png}
-    	\caption*{Fonte: Silva, 2019.}
-	\label{fig:FIGURA1}
-\end{figure}
+Em cursos de Algoritmos e Estruturas de Dados, os estudantes frequentemente precisam converter explicações abstratas em programas executáveis. Esse processo envolve leitura de requisitos, decomposição do problema, escolha da estrutura apropriada, implementação de métodos e verificação do comportamento por meio de testes. Assim, a disciplina favorece a análise de diferentes dimensões da aprendizagem, como desempenho em questionários, desempenho em avaliações e características do código produzido.
 
-Este capítulo também pode conter subdivisões conforme as peculiaridades de cada pesquisa, bem como a necessidade do autor. Neste caso, os subtítulos, também chamados de seções secundárias, devem ter numeração progressiva e seguindo o título principal; separado por um espaço 1,5 do texto que o precede e do que o sucede. Todos os itens precisam ser indicados no sumário.
+\section{Heap e Tabelas Hash}
+\label{sec:heap-tabelas-hash}
 
-\section{Título}
-\label{sec:Título}
+O presente trabalho concentra-se nos conteúdos de Heap e Tabelas Hash. Ambos são tópicos relevantes em disciplinas de Algoritmos e Estruturas de Dados por combinarem fundamentos conceituais, análise de complexidade e decisões de implementação. Além disso, são estruturas amplamente utilizadas em aplicações reais, o que reforça sua importância na formação de estudantes de Computação.
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto.
+\subsection{Heap}
+\label{subsec:heap}
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto.
+Heap é uma estrutura de dados baseada em árvore, geralmente implementada sobre um arranjo, que mantém uma propriedade de ordem parcial entre pais e filhos. Em um \textit{max-heap}, cada nó possui chave maior ou igual às chaves de seus filhos; em um \textit{min-heap}, ocorre o inverso, isto é, cada nó possui chave menor ou igual às chaves de seus filhos \cite{cormen2022introduction}. Essa organização permite acesso eficiente ao maior ou menor elemento, dependendo da variação utilizada.
 
-\subsection{Título}
-\label{subsec:Título}
+Entre suas aplicações mais comuns estão filas de prioridade, algoritmos de escalonamento, seleção de elementos extremos e o algoritmo de ordenação \textit{heapsort}. A implementação de Heap exige que o estudante compreenda a relação entre a representação lógica da árvore e sua representação física em vetor, bem como operações como inserção, remoção da raiz, reconstrução da propriedade de Heap e construção da estrutura a partir de um conjunto de elementos.
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto.
+Do ponto de vista pedagógico, Heap é um conteúdo adequado para avaliar aprendizagem porque combina raciocínio sobre índices, invariantes estruturais e análise de complexidade. A correta implementação das operações depende de compreender por que determinados elementos devem subir ou descer na estrutura, e não apenas de reproduzir um código conhecido. Por isso, atividades envolvendo Heap podem evidenciar se o estudante domina a lógica da estrutura ou se apenas obteve uma solução pronta.
 
-\subsubsection{Título}
-\label{subsubsec:Título}
+\subsection{Tabelas Hash}
+\label{subsec:tabelas-hash}
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto texto.
+Tabelas Hash são estruturas utilizadas para armazenar pares chave-valor e oferecer operações eficientes de inserção, remoção e busca. Seu funcionamento depende de uma função de espalhamento, ou função \textit{hash}, responsável por mapear chaves para posições de uma tabela \cite{cormen2022introduction}. Quando bem projetadas, essas estruturas podem alcançar desempenho médio constante em operações básicas, embora o pior caso dependa da distribuição das chaves e da estratégia adotada para lidar com colisões.
 
-\begin{figure}[!ht]
-    \SingleSpacing
-	\centering
-	\caption{Título título título}
-	\includegraphics[scale=0.3]{Figuras/Figura2.PNG}
-    	\caption*{Fonte: O autor, ano.}
-	\label{fig:FIGURA2}
-\end{figure}
+As colisões ocorrem quando chaves distintas são mapeadas para a mesma posição. Estratégias como encadeamento separado e endereçamento aberto são comumente utilizadas para tratar esse problema \cite{cormen2022introduction}. Assim, o estudo de Tabelas Hash envolve não apenas a implementação de operações, mas também a compreensão de fatores como escolha da função hash, fator de carga, redimensionamento da tabela e impacto das colisões no desempenho.
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto.
+No contexto educacional, Tabelas Hash apresentam desafios importantes porque exigem que o estudante relacione abstrações matemáticas, organização de memória e análise empírica do comportamento da estrutura. A implementação prática pode variar de acordo com a estratégia de colisão, o tipo das chaves e os requisitos do problema. Essa diversidade torna o tema adequado para observar se ferramentas como o ChatGPT induzem soluções muito semelhantes ou se ajudam os estudantes a compreender alternativas de implementação.
 
-\subsubsubsection{Título}
-\label{subsubsubsec:Título}
+\section{Inteligência Artificial Generativa e ChatGPT na Educação}
+\label{sec:ia-generativa-educacao}
 
+A inteligência artificial generativa tem recebido crescente atenção na educação superior, especialmente após a popularização de sistemas capazes de gerar texto, código-fonte, explicações e exemplos a partir de instruções em linguagem natural. Entre essas ferramentas, o ChatGPT tornou-se uma das mais conhecidas e utilizadas por estudantes, inclusive em tarefas relacionadas à programação \cite{baidoo2023education,rahman2023education}.
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto.
+No contexto educacional, ferramentas baseadas em modelos de linguagem podem atuar como apoio ao estudo individual, oferecendo explicações personalizadas, exemplos adicionais, sugestões de correção e respostas imediatas a dúvidas. Estudos indicam que esse tipo de apoio pode contribuir para o engajamento dos estudantes, para a geração de materiais didáticos e para a explicação de conceitos de programação \cite{macneil2022code,sotelo2023motivation,garcia2025programming}. Em disciplinas com alta carga prática, como programação e estruturas de dados, esse suporte pode reduzir barreiras iniciais e auxiliar estudantes que têm dificuldade em interpretar erros ou transformar conceitos em código.
+
+Entretanto, o uso educacional do ChatGPT também apresenta limitações. Modelos de linguagem podem produzir respostas incorretas, incompletas ou excessivamente genéricas, especialmente quando recebem enunciados ambíguos ou quando o problema exige raciocínio específico sobre contexto, restrições e casos de teste \cite{rahman2023education,qin2023general}. Além disso, há preocupações relacionadas à integridade acadêmica, ao uso da ferramenta para obter respostas prontas e à possibilidade de aprendizagem superficial \cite{dwivedi2023chatgpt,delikoura2025superficial}.
+
+Essas limitações são relevantes porque a aprendizagem em Computação depende da construção gradual de habilidades como raciocínio lógico, abstração, depuração, tomada de decisão e análise de alternativas. Quando a ferramenta é utilizada apenas como geradora de soluções, existe o risco de o estudante concluir uma atividade sem compreender os princípios que sustentam o código produzido. Por outro lado, quando utilizada de forma orientada, a mesma ferramenta pode apoiar explicações, comparações entre soluções e reflexão sobre erros.
+
+\section{ChatGPT no Ensino de Programação}
+\label{sec:chatgpt-ensino-programacao}
+
+A literatura recente sobre ChatGPT no ensino de programação apresenta resultados mistos. A revisão de Garcia identificou diferentes usos da ferramenta nesse contexto, incluindo tutoria personalizada, reforço de conhecimento, geração de materiais, produção de código, feedback imediato e apoio à avaliação \cite{garcia2025programming}. Ao mesmo tempo, a revisão destaca desafios como desonestidade acadêmica, dependência excessiva, redução do pensamento crítico e limitações técnicas das respostas geradas.
+
+Pinto et al. discutem benefícios e desafios da inteligência artificial generativa na educação, destacando que essas tecnologias podem ampliar o engajamento e apoiar experiências de aprendizagem mais personalizadas, mas também podem gerar dependência e levantar questões éticas relacionadas a viés, autoria e integridade acadêmica \cite{pinto2023psychological}. Esses aspectos são particularmente sensíveis em cursos de programação, nos quais a entrega de código funcional nem sempre significa compreensão do algoritmo implementado.
+
+Em estudos empíricos com disciplinas de programação, Kosar et al. investigaram o uso de ChatGPT em uma disciplina de programação orientada a objetos e observaram que a ferramenta não produziu impacto estatisticamente significativo no desempenho dos estudantes \cite{kosar2024chatgpt}. Ainda assim, os participantes perceberam utilidade no apoio à compreensão e à otimização de código. Yilmaz e Yilmaz, por sua vez, apontam que o ChatGPT pode fornecer feedback rápido, auxiliar na depuração e aumentar a confiança dos estudantes, mas também pode favorecer dependência, respostas imprecisas e enfraquecimento de habilidades cognitivas quando utilizado sem orientação adequada \cite{yilmaz2023programming}.
+
+Outros estudos sugerem que o desempenho com apoio de ChatGPT pode variar conforme o tipo de tarefa. Shoufan investigou estudantes sem conhecimento prévio em uma disciplina de Sistemas Embarcados e identificou melhor desempenho em questões teóricas e de análise de código, mas dificuldades em tarefas de completamento de código e questões baseadas em imagens \cite{shoufan2023empirical}. Qureshi também observou que estudantes com acesso ao ChatGPT podem resolver tarefas definidas mais rapidamente, embora encontrem limitações em problemas mais complexos \cite{qureshi2023assessment}. Esses resultados reforçam que o impacto da ferramenta depende do desenho da atividade, do nível de complexidade e da forma como os estudantes a utilizam.
+
+\section{ChatGPT em Algoritmos e Estruturas de Dados}
+\label{sec:chatgpt-dsa}
+
+Embora existam muitos estudos sobre ChatGPT em programação introdutória, ainda há menor quantidade de evidências sobre seu impacto em tópicos mais específicos de Algoritmos e Estruturas de Dados. Essa lacuna é relevante porque estruturas de dados exigem compreensão de invariantes, análise de custo, comportamento em casos extremos e capacidade de implementar operações de forma consistente.
+
+Jamie et al. investigaram o uso do ChatGPT como ferramenta complementar a monitores em uma disciplina de Algoritmos e Estruturas de Dados \cite{jamie2024dsa}. Nesse estudo, a ferramenta foi empregada de forma orientada, com apoio humano e uso de \textit{prompts} estruturados. Os autores observaram ganhos de desempenho quando o ChatGPT foi usado como apoio pedagógico supervisionado, o que sugere que a mediação docente pode ser importante para transformar a ferramenta em recurso de aprendizagem, e não apenas em mecanismo de obtenção de respostas.
+
+O artigo-base que inspira esta pesquisa examinou o uso do ChatGPT em atividades práticas de Algoritmos e Estruturas de Dados com estudantes de graduação, adotando um desenho com pré-teste e pós-teste, grupos com diferentes condições de uso da ferramenta, questionários, notas finais e análise de similaridade de código. Naquele estudo, os tópicos avaliados foram Árvores Binárias de Busca e Árvores AVL. No presente TCC, esse desenho é tomado como inspiração metodológica, mas o recorte conceitual é adaptado para Heap e Tabelas Hash, estruturas que também são fundamentais na formação em Computação e que apresentam desafios próprios de implementação.
+
+Essa adaptação é importante porque resultados obtidos com uma estrutura de dados não podem ser automaticamente generalizados para outras. Árvores, Heaps e Tabelas Hash possuem propriedades, formas de representação e dificuldades distintas. Enquanto árvores de busca e AVL enfatizam ordenação hierárquica e balanceamento, Heaps enfatizam propriedade parcial de prioridade e Tabelas Hash enfatizam mapeamento, colisões e distribuição de chaves. Assim, investigar Heap e Tabelas Hash contribui para ampliar a compreensão sobre como o ChatGPT pode influenciar a aprendizagem em diferentes tópicos de Algoritmos e Estruturas de Dados.
+
+\section{Similaridade de Código em Atividades de Programação}
+\label{sec:similaridade-codigo}
+
+Além de avaliar desempenho por meio de questionários ou notas, pesquisas sobre atividades práticas de programação podem analisar a similaridade entre códigos submetidos pelos estudantes. Essa dimensão é relevante porque ferramentas de inteligência artificial generativa podem produzir soluções baseadas em padrões amplamente presentes em seus dados de treinamento. Em problemas clássicos, como implementação de estruturas de dados, é possível que diferentes estudantes recebam respostas semelhantes, principalmente quando os enunciados e os testes automatizados induzem uma mesma forma de solução.
+
+O MOSS (\textit{Measure of Software Similarity}) é uma ferramenta amplamente utilizada para detectar similaridade entre programas e identificar possíveis casos de reutilização de código em atividades acadêmicas \cite{bowyer1999moss}. Seu uso permite comparar submissões e observar o grau de proximidade entre implementações, apoiando análises sobre originalidade, independência e padrões recorrentes nas soluções apresentadas.
+
+No contexto desta pesquisa, a análise de similaridade de código não deve ser interpretada automaticamente como prova de plágio. Em atividades com esqueletos de código, testes automatizados e requisitos semelhantes, algum nível de similaridade é esperado. Ainda assim, comparar a similaridade entre grupos com diferentes condições de uso do ChatGPT pode fornecer indícios sobre o modo como a ferramenta influencia a produção prática dos estudantes. Caso um grupo apresente códigos sistematicamente mais próximos entre si, isso pode indicar maior padronização das soluções, possivelmente associada ao uso de respostas geradas pela ferramenta.
+
+\section{Síntese do Referencial}
+\label{sec:sintese-referencial}
+
+O referencial apresentado indica que Algoritmos e Estruturas de Dados constituem uma área central da formação em Computação e que Heap e Tabelas Hash são tópicos adequados para investigar a relação entre compreensão conceitual e implementação prática. Também evidencia que o ChatGPT pode apoiar a aprendizagem por meio de explicações, exemplos e feedback imediato, mas seu uso sem orientação pode favorecer dependência, respostas superficiais e dificuldades na formação de habilidades de resolução de problemas.
+
+Dessa forma, este TCC parte da necessidade de investigar empiricamente o impacto do ChatGPT em atividades práticas de Algoritmos e Estruturas de Dados, considerando não apenas o desempenho dos estudantes, mas também a similaridade entre os códigos produzidos. Essa abordagem permite observar a ferramenta sob uma perspectiva educacional mais ampla, contemplando aprendizagem, autonomia, originalidade das soluções e desenho de atividades compatíveis com o cenário atual da educação em Computação.
