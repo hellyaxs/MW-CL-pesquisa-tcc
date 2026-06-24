@@ -3,27 +3,101 @@
 \chapter{METODOLOGIA}
 \label{chap:metodologia}
 
-Deve conter a descrição da área de estudo, dos materiais (banco de dados, coleta de dados, imagens, etc.) e dos procedimentos metodológicos empregados na realização do trabalho, de maneira que outros pesquisadores possam reproduzir o estudo. 
+Este capítulo descreve os procedimentos metodológicos adotados para investigar o impacto do uso do ChatGPT na compreensão de conteúdos de Algoritmos e Estruturas de Dados, com foco em Heap e Tabelas Hash. O desenho experimental toma como referência o estudo do artigo-base, porém adapta os tópicos investigados e reorganiza as condições de uso da ferramenta em um arranjo com grupos cruzados.
 
-Utilizar a formatação indicada no capítulo anterior.
+\section{Caracterização da Pesquisa}
+\label{sec:caracterizacao-pesquisa}
 
-Para a inserção de figuras, por exemplo, seguir o modelo colocado abaixo, sempre que possível coloca-la o mais próximo possível do texto relacionado. O título da ilustração deve ser breve, porém explicativo, digitado na parte superior, centralizado e precedido da palavra Figura e com numeração progressiva para todo o trabalho. Abaixo da imagem, é preciso inserir a legenda (se houver) e a fonte. Confira os exemplos das Figuras \ref{fig:FIGURA3} e \ref{fig:FIGURA2}.
+A pesquisa caracteriza-se como um estudo empírico em contexto educacional, com abordagem quantitativa e desenho comparativo. O objetivo é observar se o uso do ChatGPT durante atividades práticas de programação influencia a compreensão dos estudantes sobre os conteúdos trabalhados. Para isso, adota-se um desenho experimental com dois grupos e condições invertidas de uso da ferramenta entre os tópicos Heap e Tabelas Hash \cite{wohlin2012experimentation}.
+
+A variável de interesse principal é a compreensão dos conteúdos, avaliada por meio de um questionário único aplicado ao final do experimento. Esse instrumento reúne questões sobre Heap e Tabelas Hash, permitindo comparar o desempenho dos estudantes nas duas condições experimentais: com uso do ChatGPT e sem uso do ChatGPT durante as atividades práticas.
+
+\section{Contexto e Participantes}
+\label{sec:contexto-participantes}
+
+O estudo foi conduzido na disciplina de Algoritmos e Estruturas de Dados, vinculada ao curso de Engenharia da Computação da Universidade Federal Rural de Pernambuco, Unidade Acadêmica de Belo Jardim. Essa disciplina é adequada ao objetivo da pesquisa porque envolve conteúdos fundamentais da formação em Computação e exige que os estudantes articulem teoria, implementação e análise de complexidade \cite{leblanc2015se2014,cormen2022introduction}.
+
+Os participantes foram estudantes regularmente matriculados na disciplina durante o período de aplicação do estudo. A participação foi voluntária, precedida da apresentação dos objetivos da pesquisa e do aceite dos estudantes. Os dados analisados foram tratados de forma agregada ou anonimizada, preservando a confidencialidade dos participantes.
+
+\section{Conteúdos Investigados}
+\label{sec:conteudos-investigados}
+
+O artigo-base investigou o uso do ChatGPT em atividades envolvendo Árvores Binárias de Busca e Árvores AVL. Neste TCC, o mesmo raciocínio metodológico foi adaptado para os conteúdos de Heap e Tabelas Hash. Essa alteração mantém o estudo no campo de Algoritmos e Estruturas de Dados, mas amplia a análise para estruturas com propriedades e desafios de implementação diferentes.
+
+Heap foi o primeiro conteúdo trabalhado no experimento, pois permite avaliar a compreensão de propriedades de prioridade, representação em vetor e operações de reorganização da estrutura. Tabelas Hash foi o segundo conteúdo, exigindo compreensão sobre função de espalhamento, colisões, fator de carga e estratégias de tratamento de conflitos. Ambos os tópicos são apoiados pela literatura clássica de estruturas de dados e possuem aplicações práticas relevantes \cite{cormen2022introduction}.
+
+\section{Hipótese da Pesquisa}
+\label{sec:hipotese-pesquisa}
+
+A investigação considera uma única hipótese nula, associada à compreensão dos conteúdos após as atividades práticas:
+
+\begin{itemize}
+    \item $H_{0}$: não há diferença significativa na compreensão dos estudantes quando comparamos condições com e sem uso do ChatGPT nas atividades práticas de Algoritmos e Estruturas de Dados.
+\end{itemize}
+"
+A hipótese $H_{0}$ é avaliada por meio das respostas ao questionário único, comparando o desempenho dos estudantes em questões relacionadas a Heap e Tabelas Hash sob cada condição experimental. A análise estatística considera o tamanho da amostra e a distribuição dos dados, empregando testes não paramétricos quando necessário \cite{kitchenham2019statistical,sheskin2003handbook}.
+
+\section{Desenho Experimental}
+\label{sec:desenho-experimental}
+
+O desenho experimental é organizado em quatro momentos principais: etapa inicial, atividade de Heap, atividade de Tabelas Hash e aplicação do questionário. A Figura \ref{fig:fluxo-metodologia} apresenta uma visão geral desse processo.
 
 \begin{figure}[!ht]
     \SingleSpacing
-	\centering
-	\caption{Nuvem de Tags dos PPCs das licenciaturas em Ciências Biológicas, Física e Química da UFRPE}
-	\includegraphics[scale=1.2]{Figuras/Figura1.png}
-    	\caption*{Fonte: Silva, 2019.}
-	\label{fig:FIGURA3}
+    \centering
+    \caption{Visão geral do processo experimental}
+    \includegraphics[width=\textwidth]{Figuras/fluxo-metodologia.png}
+    \caption*{Fonte: Elaboração própria, adaptada do desenho experimental do artigo-base.}
+    \label{fig:fluxo-metodologia}
 \end{figure}
 
-\begin{figure}[!ht]
-	\centering
-	\caption{Método de construção de pilha de estéril descendente}
-	\includegraphics[scale=0.5]{Figuras/Figura2.png}
-	\caption*{Fonte: Exemplo do template.}
-	\label{fig:FIGURA4}
-\end{figure}
+Na etapa inicial, os estudantes foram informados sobre a pesquisa, seus objetivos, as atividades previstas e as condições de participação. Em seguida, os participantes foram distribuídos em dois grupos com condições invertidas de uso do ChatGPT:
 
-Neste capítulo, é indicado relacionar os dados da pesquisa e como eles foram obtidos. Apresentar, ainda, os procedimentos metodológicos e a aplicação deles conforme os dados da pesquisa e levando em consideração a fundamentação teórica.
+\begin{itemize}
+    \item \textbf{Grupo 1:} utilizou o ChatGPT na atividade prática de Heap e não utilizou a ferramenta na atividade prática de Tabelas Hash.
+    \item \textbf{Grupo 2:} não utilizou o ChatGPT na atividade prática de Heap e utilizou a ferramenta na atividade prática de Tabelas Hash.
+\end{itemize}
+
+Esse arranjo, conhecido como desenho com grupos cruzados, permite que cada tópico seja estudado sob as duas condições experimentais, reduzindo o efeito de diferenças sistemáticas entre os conteúdos. Assim, a compreensão em Heap é comparada entre estudantes que usaram e que não usaram o ChatGPT, assim como ocorre para Tabelas Hash.
+
+Na atividade de Heap, os participantes assistiram à aula teórica e, em seguida, realizaram a implementação prática em ambiente de laboratório. O tempo da atividade foi controlado e as condições de uso do ChatGPT seguiram a divisão dos grupos descrita anteriormente. Os estudantes do grupo sem ChatGPT puderam consultar materiais didáticos, anotações de aula, documentação oficial e exemplos fornecidos pelo docente, mas não tinham permissão para utilizar ferramentas de inteligência artificial generativa.
+
+A atividade de Tabelas Hash seguiu a mesma estrutura geral: aula teórica, implementação prática e submissão do código. Nesta etapa, as condições de uso do ChatGPT foram invertidas entre os grupos. Dessa forma, cada grupo vivenciou uma atividade com a ferramenta e outra sem ela.
+
+Ao final das duas atividades práticas, todos os participantes responderam a um único questionário contendo questões sobre Heap e Tabelas Hash. Durante a aplicação do instrumento, o uso do ChatGPT não foi permitido, de modo a avaliar a compreensão individual dos estudantes após as atividades.
+
+\section{Instrumentos e Materiais}
+\label{sec:instrumentos-materiais}
+
+As atividades práticas foram disponibilizadas por meio de repositórios contendo código-base, métodos a serem implementados e testes automatizados. Essa estrutura padronizou as tarefas e garantiu que todos os estudantes trabalhassem sobre os mesmos requisitos. O código-base continha apenas a estrutura necessária para orientar a implementação, sem fornecer diretamente a solução dos métodos avaliados.
+
+O instrumento de avaliação foi um questionário único, composto por questões objetivas sobre os conteúdos de Heap e Tabelas Hash. O questionário contemplou aspectos teóricos e práticos, incluindo conceitos, funcionamento das operações, análise de complexidade e interpretação de trechos de código. As questões foram organizadas em seções correspondentes a cada tópico, permitindo analisar separadamente a compreensão em cada conteúdo e em cada condição de uso do ChatGPT.
+
+\section{Procedimentos de Coleta de Dados}
+\label{sec:procedimentos-coleta}
+
+A coleta de dados seguiu a sequência definida no desenho experimental. Inicialmente, os participantes receberam orientações sobre a pesquisa e foram distribuídos nos dois grupos. Em seguida, realizaram a atividade prática de Heap sob a condição de uso do ChatGPT definida para seu grupo.
+
+Depois da conclusão da atividade de Heap, os estudantes participaram da aula teórica e da atividade prática de Tabelas Hash, agora sob a condição invertida de uso da ferramenta. Ao final das duas atividades, todos responderam ao questionário único, sem apoio do ChatGPT.
+
+Os dados coletados foram as respostas ao questionário e os registros de participação nas atividades práticas. Estudantes que não concluíram alguma etapa essencial do experimento tiveram seus dados tratados separadamente ou excluídos da análise comparativa, conforme critério definido previamente, para evitar distorções nos resultados.
+
+\section{Procedimentos de Análise dos Dados}
+\label{sec:procedimentos-analise}
+
+A análise dos dados foi organizada para avaliar a hipótese $H_{0}$. Inicialmente, as respostas do questionário foram separadas por tópico: questões de Heap e questões de Tabelas Hash. Em seguida, foram calculados indicadores de desempenho, como número de acertos ou pontuação por seção, para cada participante.
+
+Para o conteúdo de Heap, compararam-se os resultados dos estudantes que utilizaram o ChatGPT (Grupo 1) com os que não utilizaram a ferramenta (Grupo 2). Para Tabelas Hash, a comparação foi invertida: estudantes que usaram o ChatGPT (Grupo 2) versus estudantes que não usaram (Grupo 1). Essa estratégia respeita o desenho com grupos cruzados e permite observar o efeito da ferramenta em cada tópico.
+
+Em razão do tamanho da amostra e da possível não normalidade dos dados, a análise estatística empregou testes não paramétricos, como o teste de Mann-Whitney U, para comparar os grupos em cada tópico \cite{kitchenham2019statistical,sheskin2003handbook}. Quando aplicável, também foi calculado tamanho de efeito, como o Cliff's Delta, para complementar a interpretação dos valores-p e estimar a magnitude das diferenças observadas \cite{kitchenham2019statistical}.
+
+\section{Ameaças à Validade}
+\label{sec:ameacas-validade}
+
+Algumas ameaças à validade precisam ser consideradas na interpretação dos resultados. A primeira diz respeito ao tamanho da amostra, pois estudos em turmas específicas podem envolver número limitado de participantes, o que reduz a generalização dos achados.
+
+A segunda refere-se à equivalência entre os grupos. Embora o desenho com grupos cruzados controle parte das diferenças entre os tópicos, ainda é possível que variações de dificuldade entre Heap e Tabelas Hash influenciem o desempenho no questionário. Além disso, diferenças prévias de conhecimento entre os estudantes podem afetar os resultados, mesmo com a inversão das condições.
+
+Também existe ameaça relacionada ao controle do uso do ChatGPT. Mesmo quando a ferramenta é proibida para um grupo em determinada atividade, é necessário monitorar o laboratório para reduzir a possibilidade de uso indevido. Outra limitação envolve o instrumento de avaliação: questionários objetivos permitem comparação direta entre grupos, mas podem não capturar toda a profundidade da aprendizagem, especialmente aspectos como raciocínio, justificativa de decisões e capacidade de depuração.
+
+Por fim, os resultados devem ser interpretados considerando o contexto institucional, a linguagem de programação adotada, o perfil da turma e o período de aplicação do estudo.
