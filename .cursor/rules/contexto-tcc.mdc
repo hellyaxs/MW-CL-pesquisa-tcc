@@ -23,31 +23,35 @@ alwaysApply: true
 
 ## Tema E Objetivo
 
-- O TCC investiga a aprendizagem de estudantes na disciplina de Algoritmos e Estruturas de Dados, considerando o impacto do uso de ChatGPT/IA generativa em atividades praticas.
-- O recorte principal do TCC e Heap e Tabelas Hash.
-- O trabalho deve tratar o uso de IA generativa como tema educacional e empirico, discutindo aprendizagem, compreensao conceitual, desempenho e similaridade de codigo.
-- Enquanto os dados ainda nao forem coletados/analisados, escrever em tom de proposta ou estudo em desenvolvimento; nao afirmar resultados como conclusoes definitivas.
+- O TCC investiga o impacto do uso do ChatGPT na **compreensao** de estudantes da disciplina de Algoritmos e Estruturas de Dados, com foco em **Heap e Tabelas Hash**.
+- O experimento ja foi realizado; escrever em tom de **estudo concluido**, reportando dados, analises e limitacoes.
+- A variavel principal e a compreensao, avaliada por **questionario unico** aplicado ao final das atividades praticas, sem apoio do ChatGPT.
+- **Nao faz parte deste TCC:** analise de similaridade de codigo, MOSS, notas finais de disciplina ou comparacao com outros topicos (BST, AVL, ArrayList, LinkedList etc.).
 
-## Artigo-Base
+## Metodologia Adotada
 
-- O PDF de referencia e `Waldemar___CBSoft___Education (2).pdf`, com o estudo "Toward evaluating the impact of ChatGPT on learning data structures and algorithms: an experiment with undergraduate students".
-- O artigo-base avalia estudantes de graduacao em DSA usando desenho preteste-posteste com grupos: um grupo com uso livre de ChatGPT nas atividades de laboratorio e outro grupo sem ChatGPT na fase principal.
-- No artigo, os topicos avaliados foram Binary Search Trees (BST) e AVL Trees. No TCC de Elias, esses topicos devem ser tratados como inspiracao metodologica ou trabalho relacionado, pois o novo recorte e Heap e Tabelas Hash.
-- As dimensoes avaliadas no artigo sao: respostas a questionarios, desempenho em prova final/notas e similaridade de codigo entre entregas.
-- O artigo usa MOSS para analisar similaridade de codigo e testes estatisticos nao parametricos, como Mann-Whitney U, Wilcoxon e Cliff's Delta.
-- Principais achados do artigo: nao houve diferenca estatisticamente significativa em compreensao ou notas finais, mas houve maior similaridade de codigo no grupo que usou ChatGPT.
+- Desenho experimental com **grupos cruzados (crossover)**: Grupo 1 usa ChatGPT em Heap e nao usa em Tabelas Hash; Grupo 2 inverte.
+- Atividades praticas com repositorios (codigo-base, testes automatizados, laboratorio controlado).
+- TCLE com perguntas sobre familiaridade previa com IA generativa (dados na Metodologia).
+- **Hipótese unica:** $H_0$ — nao ha diferencia significativa na compreensao entre condicoes com e sem ChatGPT.
+- **Analise estatistica:** Shapiro-Wilk, Mann-Whitney U, Cliff's Delta (magnitude do efeito) e Wilcoxon pareado.
+- Amostra: 25 distribuidos, **20 participacao completa**, 5 desistentes (faltou secao Hash).
 
-## Metodologia Esperada
+## Resultados Principais (ja obtidos)
 
-- Manter o raciocinio metodologico do artigo-base quando fizer sentido: participantes, fases do experimento, instrumentos, grupos, hipoteses, coleta de dados, analise estatistica e ameacas a validade.
-- Adaptar hipoteses, objetivos e perguntas de pesquisa para Heap e Tabelas Hash.
-- Para atividades praticas, considerar repositorios com stubs, testes automatizados e tempo controlado de laboratorio, alinhados ao artigo-base.
-- Para questionarios, priorizar questoes teoricas e praticas sobre Heap e Tabelas Hash; registrar fonte das questoes e revisar clareza, dificuldade e validade do instrumento.
-- Para resultados e discussoes, comparar grupos de forma cautelosa, reportando tamanho da amostra, perdas/dropouts, valores-p, tamanho de efeito e limitacoes.
+- Mann-Whitney agregado: $p = 1{,}000$; Cliff's Delta = $-0{,}003$ (efeito **negligivel**).
+- $H_0$ **nao rejeitada**; Wilcoxon pareado: $p = 0{,}717$.
+- Alta familiaridade previa com ChatGPT (100% conheciam IA; 89,3% usam quase sempre em programacao).
+
+## Referencia Interna (nao citar explicitamente no texto do TCC)
+
+- Existe o PDF `Waldemar___CBSoft___Education (2).pdf` como material de orientacao interna.
+- **Nao mencionar** no TCC: "artigo-base", BST, AVL, MOSS ou adaptacao explicita desse estudo.
+- Citar trabalhos relacionados pela bibliografia (Jamie, Kosar, Garcia etc.), de forma generica.
 
 ## Diretrizes De Escrita
 
-- Ao adaptar trechos do artigo, nao copiar mecanicamente. Traduzir, reescrever e contextualizar para o TCC, deixando claro o novo recorte.
-- Quando mencionar o estudo original, tratar BST/AVL como trabalho relacionado ou inspiracao metodologica, nao como se fossem os topicos avaliados no novo TCC.
-- Manter linguagem academica em portugues brasileiro, com frases claras e objetivas.
-- Sempre preservar integridade academica: citar fontes, evitar plagio, separar traducao/adaptacao de autoria propria e indicar quando um trecho depende de dados ainda nao coletados.
+- Priorizar o termo **compreensao** (instrumento e hipotese); "aprendizagem" pode aparecer no titulo ou em discussao mais ampla.
+- Nao repetir entre capitulos: perfil do TCLE (tabela na Metodologia; Resultados referencia), crossover, limitacoes de amostra.
+- Manter linguagem academica em portugues brasileiro, frases claras e objetivas.
+- Preservar integridade academica: citar fontes, evitar plagio, nao afirmar resultados diferentes dos dados coletados.
