@@ -25,7 +25,7 @@ alwaysApply: true
 
 - O TCC investiga o impacto do uso do ChatGPT na **compreensao** de estudantes da disciplina de Algoritmos e Estruturas de Dados, com foco em **Heap e Tabelas Hash**.
 - O experimento ja foi realizado; escrever em tom de **estudo concluido**, reportando dados, analises e limitacoes.
-- A variavel principal e a compreensao, avaliada por **questionario unico** aplicado ao final das atividades praticas, sem apoio do ChatGPT.
+- A variavel principal e a compreensao, avaliada por **questionarios objetivos** aplicados ao final de **cada** atividade pratica (Heap e Tabelas Hash), sem apoio do ChatGPT.
 - **Nao faz parte deste TCC:** analise de similaridade de codigo, MOSS, notas finais de disciplina ou comparacao com outros topicos (BST, AVL, ArrayList, LinkedList etc.).
 
 ## Metodologia Adotada
