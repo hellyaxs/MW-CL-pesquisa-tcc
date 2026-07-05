@@ -10,7 +10,7 @@ Este capítulo descreve os procedimentos metodológicos adotados para investigar
 
 A pesquisa caracteriza-se como um estudo empírico em contexto educacional, com abordagem quantitativa e desenho comparativo. O objetivo é observar se o uso do ChatGPT durante atividades práticas de programação influencia a compreensão dos estudantes sobre os conteúdos trabalhados. Para isso, adota-se um desenho experimental com dois grupos e condições invertidas de uso da ferramenta entre os tópicos Heap e Tabelas Hash \cite{wohlin2012experimentation}.
 
-A variável de interesse principal é a compreensão dos conteúdos, avaliada por meio de um questionário único aplicado ao final do experimento. Esse instrumento reúne questões sobre Heap e Tabelas Hash, permitindo comparar o desempenho dos estudantes nas duas condições experimentais: com uso do ChatGPT e sem uso do ChatGPT durante as atividades práticas.
+A variável de interesse principal é a compreensão dos conteúdos, avaliada por meio de questionários objetivos aplicados ao final de cada atividade prática, sem apoio do ChatGPT. O questionário de Heap continha 20 questões e o de Tabelas Hash, 21 questões, permitindo comparar o desempenho dos estudantes nas duas condições experimentais: com uso do ChatGPT e sem uso do ChatGPT durante as implementações.
 
 \section{Contexto e Participantes}
 \label{sec:contexto-participantes}
@@ -35,12 +35,12 @@ A investigação considera uma única hipótese nula, associada à compreensão 
     \item $H_{0}$: não há diferença significativa na compreensão dos estudantes quando comparamos condições com e sem uso do ChatGPT nas atividades práticas de Algoritmos e Estruturas de Dados.
 \end{itemize}
 
-A hipótese $H_{0}$ é avaliada por meio das respostas ao questionário único, comparando o desempenho dos estudantes em questões relacionadas a Heap e Tabelas Hash sob cada condição experimental. A análise estatística considera o tamanho da amostra e a distribuição dos dados, empregando testes não paramétricos quando necessário \cite{kitchenham2019statistical,sheskin2003handbook}.
+A hipótese $H_{0}$ é avaliada por meio das pontuações obtidas nos questionários aplicados após cada atividade prática, comparando o desempenho dos estudantes em Heap e Tabelas Hash sob cada condição experimental. A análise estatística considera o tamanho da amostra e a distribuição dos dados, empregando testes não paramétricos quando necessário \cite{kitchenham2019statistical,sheskin2003handbook}.
 
 \section{Desenho Experimental}
 \label{sec:desenho-experimental}
 
-O desenho experimental é organizado em quatro momentos principais: etapa inicial, atividade de Heap, atividade de Tabelas Hash e aplicação do questionário. A Figura \ref{fig:fluxo-metodologia} apresenta uma visão geral desse processo.
+O desenho experimental é organizado em três momentos principais: etapa inicial, atividade de Heap e atividade de Tabelas Hash. Em cada atividade prática, a avaliação da compreensão ocorreu por meio de questionário aplicado ao final da implementação, sem uso do ChatGPT. A Figura \ref{fig:fluxo-metodologia} apresenta uma visão geral desse processo.
 
 \begin{figure}[!ht]
     \SingleSpacing
@@ -89,32 +89,30 @@ Conforme a Tabela \ref{tab:perfil-ia}, todos os respondentes já possuíam conhe
 
 Esse arranjo, conhecido como desenho com grupos cruzados, permite que cada tópico seja estudado sob as duas condições experimentais, reduzindo o efeito de diferenças sistemáticas entre os conteúdos. Assim, a compreensão em Heap é comparada entre estudantes que usaram e que não usaram o ChatGPT, assim como ocorre para Tabelas Hash.
 
-Na atividade de Heap, os participantes assistiram à aula teórica e, em seguida, realizaram a implementação prática em ambiente de laboratório. O tempo da atividade foi controlado e as condições de uso do ChatGPT seguiram a divisão dos grupos descrita anteriormente. Os estudantes do grupo sem ChatGPT puderam consultar materiais didáticos, anotações de aula, documentação oficial e exemplos fornecidos pelo docente, mas não tinham permissão para utilizar ferramentas de inteligência artificial generativa.
+Na atividade de Heap, os participantes assistiram à aula teórica e, em seguida, realizaram a implementação prática em ambiente de laboratório. O tempo da atividade foi controlado e as condições de uso do ChatGPT seguiram a divisão dos grupos descrita anteriormente. Os estudantes do grupo sem ChatGPT puderam consultar materiais didáticos, anotações de aula, documentação oficial e exemplos fornecidos pelo docente, mas não tinham permissão para utilizar ferramentas de inteligência artificial generativa. Ao término da atividade, responderam a um questionário objetivo sobre Heap, também sem apoio do ChatGPT.
 
-A atividade de Tabelas Hash seguiu a mesma estrutura geral: aula teórica, implementação prática e submissão do código. Nesta etapa, as condições de uso do ChatGPT foram invertidas entre os grupos. Dessa forma, cada grupo vivenciou uma atividade com a ferramenta e outra sem ela.
-
-Ao final das duas atividades práticas, todos os participantes responderam a um único questionário contendo questões sobre Heap e Tabelas Hash. Durante a aplicação do instrumento, o uso do ChatGPT não foi permitido, de modo a avaliar a compreensão individual dos estudantes após as atividades.
+A atividade de Tabelas Hash seguiu a mesma estrutura geral: aula teórica, implementação prática, submissão do código e aplicação de questionário sobre o conteúdo trabalhado. Nesta etapa, as condições de uso do ChatGPT foram invertidas entre os grupos. Dessa forma, cada grupo vivenciou uma atividade com a ferramenta e outra sem ela, sendo avaliado por questionário específico ao final de cada implementação.
 
 \section{Instrumentos e Materiais}
 \label{sec:instrumentos-materiais}
 
 As atividades práticas foram disponibilizadas por meio de repositórios contendo código-base, métodos a serem implementados e testes automatizados. Essa estrutura padronizou as tarefas e garantiu que todos os estudantes trabalhassem sobre os mesmos requisitos. O código-base continha apenas a estrutura necessária para orientar a implementação, sem fornecer diretamente a solução dos métodos avaliados.
 
-O instrumento de avaliação foi um questionário único, composto por questões objetivas sobre os conteúdos de Heap e Tabelas Hash. O questionário contemplou aspectos teóricos e práticos, incluindo conceitos, funcionamento das operações, análise de complexidade e interpretação de trechos de código. As questões foram organizadas em seções correspondentes a cada tópico, permitindo analisar separadamente a compreensão em cada conteúdo e em cada condição de uso do ChatGPT.
+O instrumento de avaliação foi composto por questionários objetivos aplicados ao final de cada atividade prática. O questionário de Heap continha 20 questões e o de Tabelas Hash, 21 questões, abordando aspectos teóricos e práticos, incluindo conceitos, funcionamento das operações, análise de complexidade e interpretação de trechos de código. Em ambos os casos, o uso do ChatGPT não foi permitido durante a aplicação do instrumento.
 
 \section{Procedimentos de Coleta de Dados}
 \label{sec:procedimentos-coleta}
 
 A coleta de dados seguiu a sequência definida no desenho experimental. Inicialmente, os participantes receberam orientações sobre a pesquisa e foram distribuídos nos dois grupos. Em seguida, realizaram a atividade prática de Heap sob a condição de uso do ChatGPT definida para seu grupo.
 
-Depois da conclusão da atividade de Heap, os estudantes participaram da aula teórica e da atividade prática de Tabelas Hash, agora sob a condição invertida de uso da ferramenta. Ao final das duas atividades, todos responderam ao questionário único, sem apoio do ChatGPT.
+Depois da conclusão da atividade de Heap, incluindo o questionário correspondente, os estudantes participaram da aula teórica e da atividade prática de Tabelas Hash, agora sob a condição invertida de uso da ferramenta, seguida do questionário sobre esse conteúdo.
 
-Os dados coletados foram as respostas ao questionário e os registros de participação nas atividades práticas. Estudantes que não concluíram alguma etapa essencial do experimento tiveram seus dados tratados separadamente ou excluídos da análise comparativa, conforme critério definido previamente, para evitar distorções nos resultados.
+Os dados coletados foram as pontuações dos questionários de Heap e Tabelas Hash e os registros de participação nas atividades práticas. Estudantes que não concluíram alguma etapa essencial do experimento tiveram seus dados tratados separadamente ou excluídos da análise comparativa, conforme critério definido previamente, para evitar distorções nos resultados.
 
 \section{Procedimentos de Análise dos Dados}
 \label{sec:procedimentos-analise}
 
-A análise dos dados foi organizada para avaliar a hipótese $H_{0}$. Inicialmente, as respostas do questionário foram separadas por tópico: questões de Heap e questões de Tabelas Hash. Em seguida, foram calculados indicadores de desempenho, como número de acertos ou pontuação por seção, para cada participante.
+A análise dos dados foi organizada para avaliar a hipótese $H_{0}$. Inicialmente, as pontuações dos questionários de Heap e de Tabelas Hash foram organizadas por condição experimental. Em seguida, foram calculados indicadores de desempenho, como número de acertos ou pontuação por questionário, para cada participante.
 
 Para o conteúdo de Heap, compararam-se os resultados dos estudantes que utilizaram o ChatGPT (Grupo 1) com os que não utilizaram a ferramenta (Grupo 2). Para Tabelas Hash, a comparação foi invertida: estudantes que usaram o ChatGPT (Grupo 2) versus estudantes que não usaram (Grupo 1). Essa estratégia respeita o desenho com grupos cruzados e permite observar o efeito da ferramenta em cada tópico.
 
