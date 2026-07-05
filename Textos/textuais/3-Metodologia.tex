@@ -34,7 +34,7 @@ A investigação considera uma única hipótese nula, associada à compreensão 
 \begin{itemize}
     \item $H_{0}$: não há diferença significativa na compreensão dos estudantes quando comparamos condições com e sem uso do ChatGPT nas atividades práticas de Algoritmos e Estruturas de Dados.
 \end{itemize}
-"
+
 A hipótese $H_{0}$ é avaliada por meio das respostas ao questionário único, comparando o desempenho dos estudantes em questões relacionadas a Heap e Tabelas Hash sob cada condição experimental. A análise estatística considera o tamanho da amostra e a distribuição dos dados, empregando testes não paramétricos quando necessário \cite{kitchenham2019statistical,sheskin2003handbook}.
 
 \section{Desenho Experimental}
@@ -51,7 +51,36 @@ O desenho experimental é organizado em quatro momentos principais: etapa inicia
     \label{fig:fluxo-metodologia}
 \end{figure}
 
-Na etapa inicial, os estudantes foram informados sobre a pesquisa, seus objetivos, as atividades previstas e as condições de participação. Em seguida, os participantes foram distribuídos em dois grupos com condições invertidas de uso do ChatGPT:
+Na etapa inicial, os estudantes foram informados sobre a pesquisa, seus objetivos, as atividades previstas e as condições de participação. Antes do início das atividades experimentais, os participantes assinaram o termo de consentimento livre e esclarecido (TCLE) e responderam a perguntas sobre familiaridade prévia e frequência de uso de ferramentas de inteligência artificial generativa, especialmente em atividades de programação. Ao todo, 28 estudantes responderam a esse formulário, autorizando a utilização dos dados exclusivamente para fins acadêmicos. A Tabela \ref{tab:perfil-ia} resume o perfil dos participantes em relação ao conhecimento e ao uso dessas ferramentas.
+
+\begin{table}[!ht]
+    \centering
+    \caption{Perfil dos participantes quanto ao uso de IA generativa}
+    \label{tab:perfil-ia}
+    \begin{tabular}{l c c}
+        \hline
+        \textbf{Indicador} & \textbf{$n$} & \textbf{Percentual} \\
+        \hline
+        Já conhecia IA generativa & 28 & 100,0\% \\
+        \hline
+        \multicolumn{3}{l}{\textit{Frequência de uso geral}} \\
+        Mais de uma vez ao dia & 10 & 35,7\% \\
+        Uma vez ao dia & 2 & 7,1\% \\
+        Várias vezes na semana & 9 & 32,1\% \\
+        Algumas vezes na semana & 7 & 25,0\% \\
+        \hline
+        \multicolumn{3}{l}{\textit{Uso em atividades de programação}} \\
+        Sempre & 1 & 3,6\% \\
+        Quase sempre & 25 & 89,3\% \\
+        Raramente & 2 & 7,1\% \\
+        \hline
+    \end{tabular}
+
+    \vspace{0.2cm}
+    \caption*{Fonte: Elaboração própria, com base no termo de consentimento.}
+\end{table}
+
+Conforme a Tabela \ref{tab:perfil-ia}, todos os respondentes já possuíam conhecimento prévio sobre ferramentas de IA generativa e a maioria declarou utilizá-las com frequência em atividades de programação. Em seguida, os participantes foram distribuídos em dois grupos com condições invertidas de uso do ChatGPT:
 
 \begin{itemize}
     \item \textbf{Grupo 1:} utilizou o ChatGPT na atividade prática de Heap e não utilizou a ferramenta na atividade prática de Tabelas Hash.
@@ -89,7 +118,13 @@ A análise dos dados foi organizada para avaliar a hipótese $H_{0}$. Inicialmen
 
 Para o conteúdo de Heap, compararam-se os resultados dos estudantes que utilizaram o ChatGPT (Grupo 1) com os que não utilizaram a ferramenta (Grupo 2). Para Tabelas Hash, a comparação foi invertida: estudantes que usaram o ChatGPT (Grupo 2) versus estudantes que não usaram (Grupo 1). Essa estratégia respeita o desenho com grupos cruzados e permite observar o efeito da ferramenta em cada tópico.
 
-Em razão do tamanho da amostra e da possível não normalidade dos dados, a análise estatística empregou testes não paramétricos, como o teste de Mann-Whitney U, para comparar os grupos em cada tópico \cite{kitchenham2019statistical,sheskin2003handbook}. Quando aplicável, também foi calculado tamanho de efeito, como o Cliff's Delta, para complementar a interpretação dos valores-p e estimar a magnitude das diferenças observadas \cite{kitchenham2019statistical}.
+Inicialmente, foram calculadas estatísticas descritivas das pontuações, incluindo média, mediana, desvio padrão, valores mínimo e máximo. Em seguida, verificou-se a distribuição dos dados por meio do teste de Shapiro--Wilk, como forma de avaliar a normalidade das pontuações em cada condição experimental.
+
+Embora os resultados desse teste não tenham indicado violação significativa da normalidade em todas as condições, optou-se pela utilização de testes não paramétricos, como o teste de Mann--Whitney U, para comparar os grupos em cada tópico. Essa escolha foi motivada pelo tamanho reduzido da amostra, uma vez que testes não paramétricos tendem a apresentar maior robustez em estudos com número limitado de participantes \cite{kitchenham2019statistical,sheskin2003handbook}.
+
+Além da verificação da significância estatística, também foi calculado o coeficiente Cliff's Delta, com o objetivo de estimar a magnitude da diferença observada entre as condições experimentais. Enquanto o teste de Mann--Whitney U permite verificar a existência de diferenças estatisticamente significativas, o Cliff's Delta complementa essa análise ao quantificar a intensidade do efeito encontrado. Para interpretação, adotaram-se os limiares propostos por Romano et al., conforme reportado por Kitchenham et al.: $| \delta | < 0{,}147$ indica efeito negligível; entre $0{,}147$ e $0{,}33$, pequeno; entre $0{,}33$ e $0{,}474$, médio; e acima de $0{,}474$, grande \cite{kitchenham2019statistical}.
+
+Considerando que cada estudante foi exposto às duas condições experimentais, também foi realizada análise complementar por meio do teste de Wilcoxon para amostras pareadas, comparando as pontuações com e sem ChatGPT de um mesmo participante.
 
 \section{Ameaças à Validade}
 \label{sec:ameacas-validade}

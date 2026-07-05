@@ -3,5 +3,152 @@
 \chapter{RESULTADOS E DISCUSSÕES}
 \label{chap:resultados}
 
-Neste capítulo do trabalho, são apresentados os resultados obtidos com as análises, conforme a metodologia aplicada, os dados disponíveis e com base na fundamentação teórica. Importante expor, ainda, as discussões de tais resultados, destacando qual foi a sua contribuição sobre a temática abordada.
+Este capítulo apresenta os resultados obtidos a partir dos dados coletados no experimento e discute suas implicações à luz da hipótese $H_{0}$ e do referencial teórico. Inicialmente, descrevem-se a participação no experimento e o perfil dos estudantes quanto ao uso de IA generativa. Em seguida, apresentam-se as estatísticas descritivas e a análise inferencial conduzida por meio do teste de Shapiro--Wilk, do teste de Mann--Whitney U, do coeficiente Cliff's Delta e do teste de Wilcoxon para amostras pareadas.
 
+\section{Caracterização da Amostra e Perdas}
+\label{sec:caracterizacao-amostra}
+
+Inicialmente, 25 estudantes foram distribuídos em dois grupos com condições invertidas de uso do ChatGPT. O Grupo 1, composto por 12 participantes, utilizou o ChatGPT na atividade de Heap e não utilizou a ferramenta na atividade de Tabelas Hash. O Grupo 2, com 13 participantes, seguiu a condição inversa: sem ChatGPT em Heap e com ChatGPT em Tabelas Hash.
+
+Foram considerados desistentes os estudantes que não responderam às duas seções do questionário, correspondentes aos conteúdos de Heap e Tabelas Hash. Identificaram-se cinco desistências, todas por ausência de respostas à seção de Tabelas Hash, embora a seção de Heap tivesse sido respondida. Três desistentes pertenciam ao Grupo 1 e dois ao Grupo 2. A Tabela \ref{tab:resumo-participacao} resume a participação no experimento.
+
+\begin{table}[!ht]
+    \centering
+    \caption{Resumo da participação no experimento}
+    \label{tab:resumo-participacao}
+    \begin{tabular}{l c}
+        \hline
+        \textbf{Indicador} & \textbf{Quantidade} \\
+        \hline
+        Estudantes distribuídos nos grupos & 25 \\
+        Participação completa (Heap e Tabelas Hash) & 20 \\
+        Desistentes & 5 \\
+        Grupo 1 com participação completa & 9 \\
+        Grupo 2 com participação completa & 11 \\
+        \hline
+    \end{tabular}
+
+    \vspace{0.2cm}
+    \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
+\end{table}
+
+A amostra analisada compreende, portanto, 20 observações completas. Esse número atende ao limiar frequentemente citado na literatura como mínimo desejável para análises estatísticas em estudos experimentais, embora ainda represente um tamanho amostral reduzido para generalizações amplas \cite{wohlin2012experimentation}.
+
+\subsection{Familiaridade prévia com o ChatGPT}
+\label{subsec:familiaridade-chatgpt}
+
+Conforme descrito na Metodologia, 28 estudantes responderam ao TCLE antes do experimento, das quais 25 integraram a distribuição nos grupos. Todos os respondentes (100\%) declararam já conhecer ferramentas de IA generativa, e 89,3\% relataram utilizá-las quase sempre em atividades de programação (Tabela \ref{tab:perfil-ia}).
+
+Esses dados indicam que os participantes já possuíam familiaridade elevada com ferramentas como o ChatGPT antes do experimento. Esse perfil é semelhante ao observado em estudos recentes sobre o uso de IA generativa por estudantes de Computação \cite{garcia2025programming,daun2023chatgpt} e deve ser considerado na interpretação dos resultados, pois a condição experimental sem ChatGPT pode não representar um contexto totalmente desprovido de experiência com IA generativa.
+
+\section{Organização dos Dados}
+\label{sec:organizacao-dados}
+
+Para cada estudante com participação completa, foram registradas duas pontuações em pontos brutos: uma na condição com ChatGPT e outra na condição sem a ferramenta, conforme o desenho com grupos cruzados descrito na Metodologia. A seção de Heap contemplava 20 questões e a de Tabelas Hash, 21 questões. Essa diferença de escala deve ser considerada na interpretação da comparação agregada entre as condições.
+
+\section{Estatísticas Descritivas}
+\label{sec:desempenho-condicoes}
+
+A Tabela \ref{tab:estatisticas-descritivas} apresenta as estatísticas descritivas do desempenho dos 20 participantes que concluíram o experimento. Na comparação agregada entre as condições, os estudantes que utilizaram o ChatGPT obtiveram média de 15,05 pontos (mediana = 16,00; desvio padrão = 3,43), enquanto os que não utilizaram a ferramenta apresentaram média de 14,90 pontos (mediana = 16,00; desvio padrão = 3,97). A diferença entre as médias foi de apenas 0,15 ponto.
+
+\begin{table}[!ht]
+    \centering
+    \caption{Estatísticas descritivas do desempenho no questionário}
+    \label{tab:estatisticas-descritivas}
+    \begin{tabular}{l c c c c c c}
+        \hline
+        \textbf{Condição} & \textbf{$n$} & \textbf{Média} & \textbf{Mediana} & \textbf{DP} & \textbf{Mín.} & \textbf{Máx.} \\
+        \hline
+        Com uso do ChatGPT & 20 & 15,05 & 16,00 & 3,43 & 6,00 & 19,00 \\
+        Sem uso do ChatGPT & 20 & 14,90 & 16,00 & 3,97 & 7,00 & 20,00 \\
+        \hline
+    \end{tabular}
+
+    \vspace{0.2cm}
+    \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
+\end{table}
+
+A Tabela \ref{tab:desempenho-topico} detalha os resultados separados por conteúdo. Em Heap, a média dos estudantes que utilizaram o ChatGPT (13,00) foi ligeiramente inferior à dos que não utilizaram a ferramenta (13,18). Em Tabelas Hash, observou-se o padrão inverso (16,73 versus 17,00), porém com diferenças pequenas em ambos os casos.
+
+\begin{table}[!ht]
+    \centering
+    \caption{Desempenho médio por conteúdo e condição de uso do ChatGPT}
+    \label{tab:desempenho-topico}
+    \begin{tabular}{l c c c}
+        \hline
+        \textbf{Conteúdo} & \textbf{Condição} & \textbf{$n$} & \textbf{Média} \\
+        \hline
+        Heap (máx. 20) & Com ChatGPT & 9 & 13,00 \\
+        Heap (máx. 20) & Sem ChatGPT & 11 & 13,18 \\
+        Tabelas Hash (máx. 21) & Com ChatGPT & 11 & 16,73 \\
+        Tabelas Hash (máx. 21) & Sem ChatGPT & 9 & 17,00 \\
+        \hline
+    \end{tabular}
+
+    \vspace{0.2cm}
+    \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
+\end{table}
+
+\section{Análise Estatística da Hipótese $H_{0}$}
+\label{sec:analise-estatistica}
+
+Antes da comparação entre as condições experimentais, verificou-se a distribuição dos dados por meio do teste de Shapiro--Wilk. Para a condição com ChatGPT, obteve-se $W = 0{,}875$ e valor-$p = 0{,}014$, indicando desvio significativo da normalidade ao nível de $\alpha = 0{,}05$. Para a condição sem ChatGPT, obteve-se $W = 0{,}917$ e valor-$p = 0{,}088$, não indicando violação significativa desse pressuposto. Ainda assim, considerando o tamanho reduzido da amostra e buscando maior robustez frente a possíveis desvios, manteve-se a utilização de testes não paramétricos, conforme descrito na Metodologia.
+
+Para avaliar a hipótese $H_{0}$, foi aplicado o teste de Mann--Whitney U, adotando-se nível de significância $\alpha = 0{,}05$. Os resultados são apresentados na Tabela \ref{tab:mann-whitney}.
+
+\begin{table}[!ht]
+    \centering
+    \caption{Resultados do teste de Mann--Whitney U}
+    \label{tab:mann-whitney}
+    \begin{tabular}{l c c c}
+        \hline
+        \textbf{Comparação} & \textbf{Estatística $U$} & \textbf{$p$-valor} & \textbf{Resultado} \\
+        \hline
+        Agregada (com vs. sem ChatGPT) & 199,50 & 1,000 & Não rejeita $H_{0}$ \\
+        Heap (com vs. sem ChatGPT) & 50,50 & 0,969 & Não rejeita $H_{0}$ \\
+        Tabelas Hash (com vs. sem ChatGPT) & 36,00 & 0,314 & Não rejeita $H_{0}$ \\
+        \hline
+    \end{tabular}
+
+    \vspace{0.2cm}
+    \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
+\end{table}
+
+Em nenhuma das comparações houve diferença estatisticamente significativa na compreensão entre as condições com e sem uso do ChatGPT. Portanto, não há evidências para rejeitar a hipótese $H_{0}$.
+
+Além da significância estatística, foi calculado o coeficiente Cliff's Delta para estimar a magnitude das diferenças observadas. Enquanto o teste de Mann--Whitney U verifica se existe diferença estatisticamente significativa, o Cliff's Delta quantifica a relevância prática dessa diferença. Os resultados são apresentados na Tabela \ref{tab:cliffs-delta}.
+
+\begin{table}[!ht]
+    \centering
+    \caption{Coeficiente Cliff's Delta e magnitude do efeito}
+    \label{tab:cliffs-delta}
+    \begin{tabular}{l c c}
+        \hline
+        \textbf{Comparação} & \textbf{Cliff's Delta ($\delta$)} & \textbf{Magnitude} \\
+        \hline
+        Agregada (com vs. sem ChatGPT) & $-0{,}003$ & Negligível \\
+        Heap (com vs. sem ChatGPT) & 0,020 & Negligível \\
+        Tabelas Hash (com vs. sem ChatGPT) & $-0{,}273$ & Pequeno \\
+        \hline
+    \end{tabular}
+
+    \vspace{0.2cm}
+    \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
+\end{table}
+
+Na comparação agregada, o Cliff's Delta foi de $-0{,}003$, classificado como efeito negligível. Nas análises separadas por conteúdo, os valores também indicaram efeitos negligíveis em Heap ($\delta = 0{,}020$) e pequeno em Tabelas Hash ($\delta = -0{,}273$), embora esta última diferença não tenha alcançado significância estatística ($p = 0{,}314$). Esses resultados reforçam que, mesmo quando pequenas variações de desempenho são observadas, elas não possuem relevância prática mensurável no contexto analisado.
+
+Considerando que cada estudante foi exposto às duas condições experimentais, também foi realizada análise complementar por meio do teste de Wilcoxon para amostras pareadas. O resultado não foi estatisticamente significativo ($p = 0{,}717$), corroborando a ausência de diferença relevante na compreensão entre as condições.
+
+\section{Discussão dos Resultados}
+\label{sec:discussao-resultados}
+
+Os resultados indicam que o uso do ChatGPT durante as atividades práticas de Heap e Tabelas Hash não produziu diferença estatisticamente significativa na compreensão dos conteúdos, medida por questionário aplicado ao final do experimento. Esse achado converge com estudos que também não identificaram impacto significativo do ChatGPT no desempenho de estudantes em disciplinas de programação e estruturas de dados \cite{kosar2024chatgpt}.
+
+A combinação entre valores-$p$ elevados e Cliff's Delta negligível ou pequeno sugere que, no contexto deste experimento, a ferramenta não alterou de forma mensurável a compreensão avaliada pelo instrumento utilizado. A proximidade entre as médias agregadas (15,05 versus 14,90) e a mediana idêntica (16,00) em ambas as condições corroboram essa interpretação. Ainda assim, essa conclusão deve ser interpretada com cautela. O tamanho amostral, as cinco desistências, a diferença no número de questões entre as seções de Heap e Tabelas Hash e a aplicação do questionário apenas ao final do experimento constituem limitações importantes para a generalização dos achados.
+
+A alta familiaridade prévia dos participantes com o ChatGPT, evidenciada no TCLE (Tabela \ref{tab:perfil-ia}), indica que a turma já utilizava a ferramenta de forma frequente em programação antes do experimento, o que pode ter atenuado diferenças entre as condições com e sem uso da ferramenta durante as atividades. Outro aspecto relevante diz respeito ao desenho com grupos cruzados: embora essa estratégia reduza o efeito de diferenças sistemáticas entre os conteúdos, as comparações agregadas combinam pontuações oriundas de seções com escalas distintas, o que reforça a importância da análise separada por tópico.
+
+Do ponto de vista educacional, a ausência de diferença significativa não deve ser interpretada como prova de que o ChatGPT é neutro para a aprendizagem. O questionário avaliou principalmente compreensão conceitual e interpretativa por meio de questões objetivas, o que pode não capturar efeitos relacionados à autonomia, ao raciocínio de depuração ou à dependência da ferramenta ao longo do tempo \cite{kosmyna2025brain,delikoura2025superficial}. Estudos apontam que o uso recorrente de assistentes baseados em LLM pode estar associado a menor engajamento cognitivo e menor apropriação do conhecimento, mesmo quando o desempenho imediato em instrumentos avaliativos não difere significativamente.
+
+Por fim, os resultados deste TCC reforçam a necessidade de investigações adicionais sobre o uso pedagógico do ChatGPT em Algoritmos e Estruturas de Dados, especialmente com amostras maiores, instrumentos aplicados após cada atividade e desenhos experimentais que permitam observar efeitos de longo prazo. No contexto analisado, a hipótese $H_{0}$ permanece sustentada pelos dados coletados.
