@@ -87,7 +87,7 @@ Conforme a Tabela \ref{tab:perfil-ia}, todos os respondentes já possuíam conhe
     \item \textbf{Grupo 2:} não utilizou o ChatGPT na atividade prática de Heap e utilizou a ferramenta na atividade prática de Tabelas Hash.
 \end{itemize}
 
-Esse arranjo, conhecido como desenho com grupos cruzados, permite que cada tópico seja estudado sob as duas condições experimentais, reduzindo o efeito de diferenças sistemáticas entre os conteúdos. Assim, a compreensão em Heap é comparada entre estudantes que usaram e que não usaram o ChatGPT, assim como ocorre para Tabelas Hash.
+Esse arranjo, conhecido como desenho com grupos cruzados, permite que cada tópico seja estudado sob as duas condições experimentais, reduzindo o efeito de diferenças sistemáticas entre os conteúdos. Dessa forma, cada participante vivencia uma atividade com a ferramenta e outra sem ela, o que possibilita comparar, para o mesmo estudante, a compreensão nas condições com e sem ChatGPT.
 
 Na atividade de Heap, os participantes assistiram à aula teórica e, em seguida, realizaram a implementação prática em ambiente de laboratório. O tempo da atividade foi controlado e as condições de uso do ChatGPT seguiram a divisão dos grupos descrita anteriormente. Os estudantes do grupo sem ChatGPT puderam consultar materiais didáticos, anotações de aula, documentação oficial e exemplos fornecidos pelo docente, mas não tinham permissão para utilizar ferramentas de inteligência artificial generativa. Ao término da atividade, responderam a um questionário objetivo sobre Heap, também sem apoio do ChatGPT.
 
@@ -103,33 +103,29 @@ O instrumento de avaliação foi composto por questionários objetivos aplicados
 \section{Procedimentos de Coleta de Dados}
 \label{sec:procedimentos-coleta}
 
-A coleta de dados seguiu a sequência definida no desenho experimental. Inicialmente, os participantes receberam orientações sobre a pesquisa e foram distribuídos nos dois grupos. Em seguida, realizaram a atividade prática de Heap sob a condição de uso do ChatGPT definida para seu grupo.
+A coleta de dados seguiu a sequência definida no desenho experimental. Inicialmente, os participantes receberam orientações sobre a pesquisa e foram distribuídos nos dois grupos. Em seguida, para o conteúdo de Heap, assistiram à aula teórica, realizaram a atividade prática sob a condição de uso do ChatGPT definida para seu grupo e responderam ao questionário correspondente, sem apoio da ferramenta.
 
-Depois da conclusão da atividade de Heap, incluindo o questionário correspondente, os estudantes participaram da aula teórica e da atividade prática de Tabelas Hash, agora sob a condição invertida de uso da ferramenta, seguida do questionário sobre esse conteúdo.
+Depois da conclusão dessa etapa, os estudantes participaram da aula teórica de Tabelas Hash, realizaram a atividade prática sob a condição invertida de uso do ChatGPT e responderam ao questionário sobre esse conteúdo, também sem apoio da ferramenta.
 
 Os dados coletados foram as pontuações dos questionários de Heap e Tabelas Hash e os registros de participação nas atividades práticas. Estudantes que não concluíram alguma etapa essencial do experimento tiveram seus dados tratados separadamente ou excluídos da análise comparativa, conforme critério definido previamente, para evitar distorções nos resultados.
 
 \section{Procedimentos de Análise dos Dados}
 \label{sec:procedimentos-analise}
 
-A análise dos dados foi organizada para avaliar a hipótese $H_{0}$. Inicialmente, as pontuações dos questionários de Heap e de Tabelas Hash foram organizadas por condição experimental. Em seguida, foram calculados indicadores de desempenho, como número de acertos ou pontuação por questionário, para cada participante.
+A análise dos dados foi organizada para avaliar a hipótese $H_{0}$. Inicialmente, as pontuações dos questionários de Heap e de Tabelas Hash foram reorganizadas por condição experimental, e não por grupo de alocação inicial. Para cada participante com participação completa, extraiu-se uma pontuação na condição com ChatGPT e outra na condição sem a ferramenta, conforme o desenho com grupos cruzados. Assim, cada estudante contribuiu com um par de observações comparáveis entre as duas condições.
 
-Para o conteúdo de Heap, compararam-se os resultados dos estudantes que utilizaram o ChatGPT (Grupo 1) com os que não utilizaram a ferramenta (Grupo 2). Para Tabelas Hash, a comparação foi invertida: estudantes que usaram o ChatGPT (Grupo 2) versus estudantes que não usaram (Grupo 1). Essa estratégia respeita o desenho com grupos cruzados e permite observar o efeito da ferramenta em cada tópico.
+Foram calculadas estatísticas descritivas das pontuações, incluindo média, mediana, desvio padrão, valores mínimo e máximo, tanto na comparação agregada entre condições quanto, de forma exploratória, separadas por conteúdo. Em seguida, verificou-se a distribuição dos dados por meio do teste de Shapiro--Wilk, como forma de avaliar a normalidade das pontuações em cada condição experimental.
 
-Inicialmente, foram calculadas estatísticas descritivas das pontuações, incluindo média, mediana, desvio padrão, valores mínimo e máximo. Em seguida, verificou-se a distribuição dos dados por meio do teste de Shapiro--Wilk, como forma de avaliar a normalidade das pontuações em cada condição experimental.
+Embora os resultados do teste de Shapiro--Wilk tenham indicado desvio significativo da normalidade em uma das condições, optou-se pela utilização do teste não paramétrico de Mann--Whitney U para a comparação agregada entre as pontuações com e sem uso do ChatGPT. Essa escolha foi motivada pelo tamanho reduzido da amostra, uma vez que testes não paramétricos tendem a apresentar maior robustez em estudos com número limitado de participantes \cite{kitchenham2019statistical,sheskin2003handbook}.
 
-Embora os resultados desse teste não tenham indicado violação significativa da normalidade em todas as condições, optou-se pela utilização de testes não paramétricos, como o teste de Mann--Whitney U, para comparar os grupos em cada tópico. Essa escolha foi motivada pelo tamanho reduzido da amostra, uma vez que testes não paramétricos tendem a apresentar maior robustez em estudos com número limitado de participantes \cite{kitchenham2019statistical,sheskin2003handbook}.
-
-Além da verificação da significância estatística, também foi calculado o coeficiente Cliff's Delta, com o objetivo de estimar a magnitude da diferença observada entre as condições experimentais. Enquanto o teste de Mann--Whitney U permite verificar a existência de diferenças estatisticamente significativas, o Cliff's Delta complementa essa análise ao quantificar a intensidade do efeito encontrado. Para interpretação, adotaram-se os limiares propostos por Romano et al., conforme reportado por Kitchenham et al.: $| \delta | < 0{,}147$ indica efeito negligível; entre $0{,}147$ e $0{,}33$, pequeno; entre $0{,}33$ e $0{,}474$, médio; e acima de $0{,}474$, grande \cite{kitchenham2019statistical}.
-
-Considerando que cada estudante foi exposto às duas condições experimentais, também foi realizada análise complementar por meio do teste de Wilcoxon para amostras pareadas, comparando as pontuações com e sem ChatGPT de um mesmo participante.
+Além da verificação da significância estatística, também foi calculado o coeficiente Cliff's Delta sobre a comparação agregada entre condições, com o objetivo de estimar a magnitude da diferença observada. Enquanto o teste de Mann--Whitney U permite verificar a existência de diferenças estatisticamente significativas, o Cliff's Delta complementa essa análise ao quantificar a intensidade do efeito encontrado. Para interpretação, adotaram-se os limiares propostos por Romano et al., conforme reportado por Kitchenham et al.: $| \delta | < 0{,}147$ indica efeito negligível; entre $0{,}147$ e $0{,}33$, pequeno; entre $0{,}33$ e $0{,}474$, médio; e acima de $0{,}474$, grande \cite{kitchenham2019statistical}.
 
 \section{Ameaças à Validade}
 \label{sec:ameacas-validade}
 
 Algumas ameaças à validade precisam ser consideradas na interpretação dos resultados. A primeira diz respeito ao tamanho da amostra, pois estudos em turmas específicas podem envolver número limitado de participantes, o que reduz a generalização dos achados.
 
-A segunda refere-se à equivalência entre os grupos. Embora o desenho com grupos cruzados controle parte das diferenças entre os tópicos, ainda é possível que variações de dificuldade entre Heap e Tabelas Hash influenciem o desempenho no questionário. Além disso, diferenças prévias de conhecimento entre os estudantes podem afetar os resultados, mesmo com a inversão das condições.
+A segunda refere-se à diferença de dificuldade entre os conteúdos. Embora o desenho com grupos cruzados controle parte das assimetrias entre tópicos, ainda é possível que variações de dificuldade entre Heap e Tabelas Hash influenciem o desempenho no questionário, especialmente na comparação agregada entre condições. Além disso, diferenças prévias de conhecimento entre os estudantes podem afetar os resultados, mesmo com a inversão das condições.
 
 Também existe ameaça relacionada ao controle do uso do ChatGPT. Mesmo quando a ferramenta é proibida para um grupo em determinada atividade, é necessário monitorar o laboratório para reduzir a possibilidade de uso indevido. Outra limitação envolve o instrumento de avaliação: questionários objetivos permitem comparação direta entre grupos, mas podem não capturar toda a profundidade da aprendizagem, especialmente aspectos como raciocínio, justificativa de decisões e capacidade de depuração.
 
