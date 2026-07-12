@@ -30,7 +30,7 @@ Conforme o desenho experimental descrito na Seção \ref{sec:desenho-experimenta
     \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
 \end{table}
 
-A amostra analisada compreende 20 observações completas, número reduzido que limita a generalização dos achados, conforme discutido na Seção \ref{sec:ameacas-validade}.
+A amostra analisada compreende 20 observações completas, um número reduzido que limita a generalização dos achados, conforme discutido na Seção \ref{sec:ameacas-validade}.
 
 \section{Organização dos Dados}
 \label{sec:organizacao-dados}
@@ -59,7 +59,7 @@ A Tabela \ref{tab:estatisticas-descritivas} apresenta as estatísticas descritiv
     \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
 \end{table}
 
-A Tabela \ref{tab:desempenho-topico} detalha, de forma exploratória, os resultados separados por conteúdo. Em Heap, a média dos estudantes que utilizaram o ChatGPT (13,00) foi ligeiramente inferior à dos que não utilizaram a ferramenta (13,18). Em Tabelas Hash, observou-se o padrão inverso (16,73 versus 17,00), porém com diferenças pequenas em ambos os casos. Esses valores descrevem o desempenho por tópico, mas não constituem a base da análise inferencial principal, conduzida sobre a comparação agregada entre condições.
+A Tabela \ref{tab:desempenho-topico} detalha, de forma exploratória, os resultados por conteúdo. Em Heap, a média dos estudantes que utilizaram o ChatGPT (13,00) foi ligeiramente inferior à dos que não utilizaram a ferramenta (13,18). Em Tabelas Hash, observou-se o padrão inverso (16,73 versus 17,00), porém com diferenças pequenas em ambos os casos. Esses valores descrevem o desempenho por tópico, mas não constituem a base da análise inferencial principal, conduzida com base na comparação agregada entre condições.
 
 \begin{table}[!ht]
     \centering
@@ -124,10 +124,22 @@ O teste de Mann--Whitney U não indicou diferença estatisticamente significativ
 \section{Discussão dos Resultados}
 \label{sec:discussao-resultados}
 
-Os resultados da Seção \ref{sec:analise-estatistica} indicam que o uso do ChatGPT durante as atividades práticas não alterou de forma mensurável a compreensão avaliada pelos questionários. Esse achado converge com estudos que também não identificaram impacto significativo do ChatGPT no desempenho de estudantes em disciplinas de programação e estruturas de dados \cite{kosar2024chatgpt}.
+Os resultados da Seção \ref{sec:analise-estatistica} indicam que o uso do ChatGPT durante as atividades práticas não alterou, de forma mensurável, a compreensão avaliada pelos questionários. Esse achado converge com estudos que também não identificaram impacto significativo do ChatGPT no desempenho de estudantes em disciplinas de programação e estruturas de dados \cite{kosar2024chatgpt}.
 
-A elevada familiaridade prévia dos participantes com IA generativa (Tabela \ref{tab:perfil-ia}) pode ter atenuado diferenças entre as condições, pois a restrição ao ChatGPT durante uma atividade não elimina a experiência acumulada com a ferramenta. Além disso, a comparação agregada combina pontuações de questionários com escalas distintas, o que reforça a leitura conjunta com a Tabela \ref{tab:desempenho-topico}. As demais limitações do estudo estão discutidas na Seção \ref{sec:ameacas-validade}.
+A elevada familiaridade prévia dos participantes com IA generativa (Tabela \ref{tab:perfil-ia}) pode ter atenuado as diferenças entre as condições, pois a restrição ao ChatGPT durante uma atividade não elimina a experiência acumulada com a ferramenta. Além disso, a comparação agregada combina pontuações de questionários com escalas distintas, o que reforça a leitura conjunta com a Tabela \ref{tab:desempenho-topico}. As demais limitações do estudo são discutidas na Seção \ref{sec:ameacas-validade}.
 
 Do ponto de vista educacional, a ausência de diferença significativa não deve ser interpretada como prova de neutralidade do ChatGPT para a aprendizagem. Os questionários avaliaram compreensão conceitual por meio de questões objetivas, o que pode não capturar efeitos sobre autonomia, depuração ou dependência da ferramenta \cite{kosmyna2025brain,delikoura2025superficial}.
 
 Por fim, os achados reforçam a necessidade de investigações adicionais sobre o uso pedagógico do ChatGPT em Algoritmos e Estruturas de Dados, com amostras maiores, instrumentos mais abrangentes e observação de efeitos de longo prazo.
+
+\section{Ameaças à Validade}
+\label{sec:ameacas-validade}
+
+Algumas ameaças à validade devem ser consideradas na interpretação dos resultados. A primeira diz respeito ao tamanho da amostra, pois estudos em turmas específicas podem envolver um número limitado de participantes, o que reduz a generalização dos achados.
+
+A segunda refere-se à diferença de dificuldade entre os conteúdos. Embora o desenho com grupos cruzados controle parte das assimetrias entre tópicos, ainda é possível que variações de dificuldade entre Heap e Tabelas Hash influenciem o desempenho no questionário, especialmente na comparação agregada entre condições. Além disso, diferenças prévias de conhecimento entre os estudantes podem afetar os resultados, mesmo com a inversão das condições.
+
+Também existe uma ameaça relacionada ao controle do uso do ChatGPT. Embora o laboratório tenha sido monitorado durante as atividades, não é possível garantir a ausência total de uso indevido fora do ambiente controlado. Outra limitação envolve o instrumento de avaliação: questionários objetivos permitem a comparação direta entre condições, mas podem não captar toda a profundidade da aprendizagem, especialmente aspectos como raciocínio, justificativa de decisões e capacidade de depuração.
+
+Por fim, os resultados devem ser interpretados considerando o contexto institucional, a linguagem de programação adotada, o perfil da turma e o período de aplicação do estudo.
+

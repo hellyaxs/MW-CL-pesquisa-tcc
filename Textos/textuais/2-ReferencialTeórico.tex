@@ -5,26 +5,63 @@
 
 Este capítulo apresenta os conceitos e estudos que fundamentam a pesquisa, com ênfase em Heap, Tabelas Hash e no uso do ChatGPT em disciplinas de Algoritmos e Estruturas de Dados.
 
-\section{Heap e Tabelas Hash}
+
+
+
+\section{Estrutura de Dados}
 \label{sec:heap-tabelas-hash}
 
-Heap é uma estrutura baseada em árvore, geralmente implementada sobre um arranjo, que mantém uma propriedade de ordem parcial entre pais e filhos. Em um \textit{max-heap}, cada nó possui chave maior ou igual às chaves de seus filhos; em um \textit{min-heap}, ocorre o inverso \cite{cormen2022introduction}. Entre suas aplicações estão filas de prioridade, seleção de elementos extremos e o algoritmo \textit{heapsort}. A implementação exige compreender a relação entre representação lógica em árvore e representação física em vetor, além de operações como inserção, remoção da raiz e reorganização da propriedade de Heap.
+As estruturas de dados constituem um dos fundamentos da Engenharia da Computação, sendo responsáveis pela organização, armazenamento e manipulação eficientes das informações utilizadas pelos algoritmos. A escolha da estrutura de dados adequada influencia diretamente o desempenho de uma aplicação, afetando aspectos como o tempo de execução, o consumo de memória e a escalabilidade. Dentre as diversas estruturas de dados, apresentaremos as duas que são cobertas nesta pesquisa: Heap e Tabelas Hash.
 
-Tabelas Hash armazenam pares chave-valor e oferecem operações eficientes de inserção, remoção e busca por meio de uma função de espalhamento (\textit{hash}) \cite{cormen2022introduction}. Colisões --- quando chaves distintas mapeiam para a mesma posição --- são tratadas por estratégias como encadeamento separado e endereçamento aberto. O estudo desse conteúdo envolve escolha da função hash, fator de carga, redimensionamento da tabela e impacto das colisões no desempenho.
+\subsection{Hash}
 
-Ambos os tópicos combinam fundamentos conceituais, análise de complexidade e desafios de implementação, o que os torna adequados para investigar se ferramentas de apoio à programação influenciam a compreensão avaliada em atividades práticas.
+As estruturas de dados baseadas em \textit{Hash} constituem uma das principais alternativas para o armazenamento e recuperação eficientes de informações em aplicações computacionais. Seu funcionamento baseia-se no uso de uma \textbf{função hash}, responsável por transformar uma chave de pesquisa em um índice correspondente a uma posição em uma tabela, denominada \textbf{tabela hash}. Esse mecanismo permite que operações como inserção, busca e remoção sejam realizadas, em média, em tempo constante, tornando as tabelas hash uma das estruturas mais eficientes para manipulação de grandes volumes de dados~\cite{cormen2022introduction}.
+
+Uma função hash recebe uma chave de entrada e calcula um valor inteiro que determina a posição em que o elemento será armazenado. Idealmente, essa função deve distribuir uniformemente as chaves ao longo da tabela, minimizando a ocorrência de colisões. Quanto mais homogênea for essa distribuição, maior será o desempenho das operações realizadas sobre a estrutura.
+
+Entretanto, diferentes chaves podem produzir o mesmo índice da tabela, fenômeno conhecido como \textbf{colisão}. Como as colisões são inevitáveis quando o número de possíveis chaves é maior que o de posições disponíveis na tabela, diversos métodos foram desenvolvidos para tratá-las. Entre as abordagens mais utilizadas estão o \textbf{encadeamento separado} (\textit{separate chaining}), no qual cada posição da tabela mantém uma lista contendo todos os elementos associados ao mesmo índice, e o \textbf{endereçamento aberto} (\textit{open addressing}), em que novos elementos são armazenados em outras posições livres da própria tabela por meio de estratégias de sondagem, como sondagem linear~\cite{cormen2022introduction}.
+
+Na linguagem Java, as estruturas baseadas em hash são disponibilizadas principalmente por meio das classes \textit{HashMap} e \textit{HashSet}, integrantes da \textbf{Java Collections Framework}. A classe \textit{HashMap} permite armazenar pares chave-valor, oferecendo acesso rápido aos elementos por meio da chave de busca. Já a classe \textit{HashSet} utiliza internamente uma tabela hash para armazenar apenas elementos únicos, impedindo a inserção de valores duplicados. Em ambas as estruturas, as operações de inserção, remoção e consulta apresentam complexidade média de \textbf{O(1)}, embora, no pior caso, possam atingir \textbf{O(n)} quando ocorrem muitas colisões.
+
+As tabelas hash são amplamente empregadas em aplicações que exigem acesso rápido às informações, como mecanismos de autenticação, sistemas de cache, bancos de dados, compiladores, indexação de arquivos e tabelas de símbolos. Sua eficiência faz com que sejam frequentemente utilizadas quando a ordem dos elementos não constitui um requisito importante, mas a velocidade de acesso é um fator crítico para o desempenho da aplicação.
+
+Segundo Cormen et al.~\cite{cormen2022introduction}, as tabelas hash representam uma das soluções mais eficientes para problemas de pesquisa dinâmica, desde que a função hash seja adequadamente projetada e o fator de carga seja mantido sob controle. Dessa forma, compreender os princípios de funcionamento das funções hash, os mecanismos de resolução de colisões e os fatores que influenciam seu desempenho é essencial para a implementação de sistemas computacionais eficientes e escaláveis.
+
+\subsection{Heap}
+
+A Heap é uma estrutura de dados hierárquica amplamente empregada em algoritmos que necessitam de acesso rápido ao maior ou ao menor elemento de um conjunto de dados. Diferentemente das árvores binárias de busca, nas quais os elementos são organizados de acordo com relações de ordem entre subárvores, a \textit{Heap} obedece a uma propriedade específica denominada propriedade de heap, que estabelece uma relação entre cada nó e seus descendentes imediatos. Essa característica permite identificar rapidamente o elemento de maior ou menor prioridade, dependendo do tipo de heap utilizada~\cite{cormen2022introduction}.
+
+Existem dois tipos principais de \textit{Heap}: a \textit{Max-Heap} e a \textit{Min-Heap}. Em uma \textit{Max-Heap}, o valor armazenado em cada nó é sempre maior ou igual aos valores de seus filhos, garantindo que o maior elemento esteja na raiz da árvore. Já em uma Min-Heap ocorre o comportamento inverso: cada nó possui valor menor ou igual ao de seus descendentes diretos, fazendo com que o menor elemento permaneça na raiz. É importante destacar que essa propriedade não implica que todos os elementos estejam completamente ordenados, mas apenas que a relação de prioridade entre pais e filhos seja preservada. Nosso curso adotou o \textit{Max-Heap}.
+
+Embora seja representada conceitualmente como uma árvore binária, a Heap normalmente é implementada com um vetor. Nessa representação, a posição dos elementos no vetor corresponde à estrutura hierárquica da árvore, permitindo localizar facilmente o pai e os filhos de qualquer nó por meio de operações aritméticas simples sobre os respectivos índices. Essa implementação elimina a necessidade de ponteiros entre os nós, reduzindo o consumo de memória e tornando as operações mais eficientes.
+
+As principais operações realizadas em uma Heap incluem a inserção de novos elementos, a remoção da raiz e a construção da estrutura a partir de um conjunto de dados. Após cada inserção ou remoção, pode ser necessário reorganizar a árvore para restaurar a propriedade de heap. Esse processo é realizado por algoritmos conhecidos como heapify-up (ou sift-up) e heapify-down (ou sift-down), responsáveis por movimentar os elementos até que a estrutura volte a satisfazer suas propriedades.
+
+As operações de inserção e remoção têm complexidade temporal de O(log n), uma vez que, no pior caso, o elemento precisa percorrer a altura da árvore para alcançar sua posição correta. Por outro lado, a consulta ao elemento de maior prioridade, localizado na raiz, tem complexidade O(1). Além disso, a construção de uma Heap a partir de um conjunto de elementos pode ser realizada em tempo O(n), tornando essa estrutura bastante eficiente para diversas aplicações~\cite{cormen2022introduction}.
+
+Apesar de seu elevado desempenho para operações de prioridade, a Heap não constitui uma estrutura adequada para buscas arbitrárias, uma vez que apenas o elemento localizado na raiz possui posição garantida. A localização de qualquer outro elemento pode exigir a inspeção de grande parte da árvore, o que resulta em complexidade linear. Dessa forma, sua principal finalidade não é armazenar dados ordenados, mas oferecer acesso eficiente ao elemento de maior ou menor prioridade.
+
+Segundo Cormen et al.~\cite{cormen2022introduction}, as Heaps desempenham um papel fundamental no desenvolvimento de algoritmos eficientes, especialmente em problemas relacionados à ordenação, escalonamento e gerenciamento de prioridades. Assim, compreender seu funcionamento, suas propriedades e suas aplicações representa um conhecimento essencial para estudantes e profissionais da área de Computação, contribuindo para a escolha da estrutura de dados mais adequada em diferentes contextos de desenvolvimento de software.
+
+% \label{sec:heap-tabelas-hash}
+
+% Heap é uma estrutura baseada em árvore, geralmente implementada sobre um arranjo, que mantém uma propriedade de ordem parcial entre pais e filhos. Em um \textit{max-heap}, cada nó possui chave maior ou igual às chaves de seus filhos; em um \textit{min-heap}, ocorre o inverso \cite{cormen2022introduction}. Entre suas aplicações estão filas de prioridade, seleção de elementos extremos e o algoritmo \textit{heapsort}. A implementação exige compreender a relação entre representação lógica em árvore e representação física em vetor, além de operações como inserção, remoção da raiz e reorganização da propriedade de Heap.
+
+% Tabelas Hash armazenam pares chave-valor e oferecem operações eficientes de inserção, remoção e busca por meio de uma função de espalhamento (\textit{hash}) \cite{cormen2022introduction}. Colisões --- quando chaves distintas mapeiam para a mesma posição --- são tratadas por estratégias como encadeamento separado e endereçamento aberto. O estudo desse conteúdo envolve a escolha da função hash, o fator de carga, o redimensionamento da tabela e o impacto das colisões no desempenho.
+
+% Ambos os tópicos combinam fundamentos conceituais, análise de complexidade e desafios de implementação, o que os torna adequados para investigar se ferramentas de apoio à programação influenciam a compreensão avaliada em atividades práticas.
 
 \section{Inteligência Artificial Generativa e ChatGPT na Educação}
 \label{sec:ia-generativa-educacao}
 
-A inteligência artificial generativa tem recebido crescente atenção na educação superior, especialmente após a popularização de sistemas capazes de gerar texto, código e explicações a partir de instruções em linguagem natural. O ChatGPT tornou-se uma das ferramentas mais utilizadas por estudantes em tarefas de programação \cite{baidoo2023education,rahman2023education}.
+A inteligência artificial generativa tem recebido atenção crescente na educação superior, especialmente após a popularização de sistemas capazes de gerar texto, código e explicações a partir de instruções em linguagem natural. O ChatGPT tornou-se uma das ferramentas mais utilizadas por estudantes em tarefas de programação \cite{baidoo2023education,rahman2023education}.
 
 No contexto educacional, modelos de linguagem podem oferecer explicações personalizadas, exemplos adicionais e sugestões de correção \cite{macneil2022code,sotelo2023motivation,garcia2025programming}. Entretanto, também apresentam limitações: respostas incorretas ou genéricas, risco de integridade acadêmica, aprendizagem superficial e possível redução do engajamento cognitivo quando o uso é recorrente e pouco orientado \cite{dwivedi2023chatgpt,delikoura2025superficial,kosmyna2025brain,qin2023general}. Esses aspectos reforçam a necessidade de investigar empiricamente o impacto do ChatGPT em disciplinas que exigem raciocínio e produção autônoma, como Algoritmos e Estruturas de Dados.
 
 \section{ChatGPT no Ensino de Programação e em Estruturas de Dados}
 \label{sec:chatgpt-dsa}
 
-A revisão de Garcia identificou usos do ChatGPT no ensino de programação --- tutoria, geração de materiais, produção de código e feedback ---, mas também desafios como dependência excessiva e limitações técnicas das respostas \cite{garcia2025programming}. Em estudo empírico com programação orientada a objetos, Kosar et al. não observaram impacto estatisticamente significativo no desempenho dos estudantes, embora os participantes tenham relatado utilidade no apoio à compreensão de código \cite{kosar2024chatgpt}.
+A revisão de Garcia identificou usos do ChatGPT no ensino de programação --- tutoria, geração de materiais, produção de código e feedback ---, mas também desafios como dependência excessiva e limitações técnicas das respostas \cite{garcia2025programming}. Em um estudo empírico com programação orientada a objetos, Kosar et al. não observaram impacto estatisticamente significativo no desempenho dos estudantes, embora os participantes tenham relatado utilidade no apoio à compreensão do código \cite{kosar2024chatgpt}.
 
 Jamie et al. investigaram o ChatGPT como ferramenta complementar a monitores em Algoritmos e Estruturas de Dados, com \textit{prompts} estruturados e mediação humana, observando ganhos quando o uso foi supervisionado \cite{jamie2024dsa}. Esses resultados indicam que o impacto da ferramenta depende do desenho da atividade, do tipo de tarefa e da forma de uso, e que evidências obtidas em um tópico ou condição de uso não se generalizam automaticamente a outros contextos --- como Heap e Tabelas Hash.
 
