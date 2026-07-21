@@ -86,7 +86,12 @@
 \providecommand{\imprimirprojeto}{}
 \newcommand{\projeto}[1]{\renewcommand{\imprimirprojeto}{#1}}
 
-% Título do TCC
+% Grau acadêmico a ser obtido (ex.: Bacharelado em Engenharia da Computação)
+% Usado no preâmbulo: "obtenção do título de ..."
+\providecommand{\imprimircurso}{}
+\newcommand{\curso}[1]{\renewcommand{\imprimircurso}{#1}}
+
+% Título do trabalho (TCC) — distinto do grau acadêmico
 \providecommand{\imprimirtituloTCC}{}
 \newcommand{\tituloTCC}[1]{\renewcommand{\imprimirtituloTCC}{#1}}
 
@@ -123,7 +128,7 @@
 \newcommand{\tituloSegundomembro}[1]{\renewcommand{\imprimirtituloSegundomembro}{#1}}
 \providecommand{\imprimirinstSegundomembro}{}
 \newcommand{\instSegundomembro}[1]{\renewcommand{\imprimirinstSegundomembro}{#1}}
-\newcommand{\imprimirSegundomembroBanca}{Membro Externo \imprimirinstSegundomembro}
+\newcommand{\imprimirSegundomembroBanca}{\imprimirinstSegundomembro}
 
 \providecommand{\imprimirnomeTerceiromembro}{}
 \newcommand{\nomeTerceiromembro}[1]{\renewcommand{\imprimirnomeTerceiromembro}{#1}}
@@ -251,7 +256,7 @@
         
         UNIVERSIDADE FEDERAL RURAL DE PERNAMBUCO\\
         UNIDADE ACADÊMICA DE BELO JARDIM\\
-        CURSO DE TEXTO TEXTO
+        CURSO DE BACHARELADO EM ENGENHARIA DA COMPUTAÇÃO
 
         \vspace{4cm}
 		  {\large\MakeUppercase{\imprimirautor}}\\
@@ -266,7 +271,7 @@
 }
 \makeatother
 
-\preambulo{{\imprimirprojeto} apresentado ao Curso de Engenharia da Computação da Universidade Federal Rural de Pernambuco, como requisito parcial para obtenção do título de \imprimirtituloTCC.}
+\preambulo{{\imprimirprojeto} apresentado ao Curso de Engenharia da Computação da Universidade Federal Rural de Pernambuco, como requisito parcial para obtenção do título de \imprimircurso.}
 
 % FOLHA DE ROSTO
 \makeatletter
