@@ -2,3 +2,4 @@
 *.xlsx
 /modelo-iza/
 __pycache__/
+.cursor/

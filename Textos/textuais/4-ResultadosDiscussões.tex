@@ -3,39 +3,12 @@
 \chapter{RESULTADOS E DISCUSSÕES}
 \label{chap:resultados}
 
-Este capítulo apresenta os resultados do experimento e discute suas implicações à luz da hipótese $H_{0}$ e do referencial teórico. Descrevem-se a participação e as perdas amostrais, as estatísticas descritivas e a análise inferencial conduzida conforme a Metodologia.
-
-\section{Caracterização da Amostra e Perdas}
-\label{sec:caracterizacao-amostra}
-
-Conforme o desenho experimental descrito na Seção \ref{sec:desenho-experimental}, 25 estudantes foram distribuídos em dois grupos com condições invertidas de uso do ChatGPT. Foram considerados desistentes os que não responderam ao questionário de Tabelas Hash, embora tivessem participado da avaliação de Heap; identificaram-se cinco desistências (três no Grupo 1 e dois no Grupo 2). A Tabela \ref{tab:resumo-participacao} resume a participação no experimento.
-
-\begin{table}[!ht]
-    \centering
-    \caption{Resumo da participação no experimento}
-    \label{tab:resumo-participacao}
-    \begin{tabular}{l c}
-        \hline
-        \textbf{Indicador} & \textbf{Quantidade} \\
-        \hline
-        Estudantes distribuídos nos grupos & 25 \\
-        Participação completa (Heap e Tabelas Hash) & 20 \\
-        Desistentes & 5 \\
-        Grupo 1 com participação completa & 9 \\
-        Grupo 2 com participação completa & 11 \\
-        \hline
-    \end{tabular}
-
-    \vspace{0.2cm}
-    \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
-\end{table}
-
-A amostra analisada compreende 20 observações completas, um número reduzido que limita a generalização dos achados, conforme discutido na Seção \ref{sec:ameacas-validade}.
+Este capítulo apresenta os resultados do experimento e discute suas implicações à luz da hipótese $H_{0}$ e do referencial teórico. Descrevem-se as estatísticas descritivas e a análise inferencial conduzida conforme a Metodologia, com base na amostra de participação completa definida na Seção \ref{sec:desenho-experimental}.
 
 \section{Organização dos Dados}
 \label{sec:organizacao-dados}
 
-As pontuações foram reorganizadas por condição experimental, conforme descrito na Seção \ref{sec:procedimentos-analise}. A diferença de escala entre os questionários (20 questões em Heap e 21 em Tabelas Hash) deve ser considerada na interpretação da comparação agregada.
+As pontuações foram reorganizadas por condição experimental, conforme descrito na Seção \ref{sec:procedimentos-analise}. A diferença de escala entre os questionários (máximos de 20 e 21 acertos) deve ser considerada na interpretação da comparação agregada, uma vez que as pontuações foram analisadas sem normalização.
 
 \section{Estatísticas Descritivas}
 \label{sec:desempenho-condicoes}
@@ -85,7 +58,7 @@ A Tabela \ref{tab:desempenho-topico} detalha, de forma exploratória, os resulta
 
 Antes da comparação entre as condições, aplicou-se o teste de Shapiro--Wilk, conforme descrito na Metodologia. Para a condição com ChatGPT, obteve-se $W = 0{,}875$ e valor-$p = 0{,}014$; para a condição sem ChatGPT, $W = 0{,}917$ e valor-$p = 0{,}088$.
 
-Para avaliar a hipótese $H_{0}$, aplicou-se o teste de Mann--Whitney U à comparação agregada ($\alpha = 0{,}05$). O resultado é apresentado na Tabela \ref{tab:mann-whitney}.
+Para avaliar a hipótese $H_{0}$, aplicou-se o teste de Mann--Whitney U à comparação agregada ($\alpha = 0{,}05$). O resultado é apresentado na Tabela \ref{tab:mann-whitney}. A Figura \ref{fig:mann-whitney} ilustra a distribuição das pontuações por condição e a proximidade entre o valor de $U$ observado e o esperado sob $H_{0}$.
 
 \begin{table}[!ht]
     \centering
@@ -103,7 +76,17 @@ Para avaliar a hipótese $H_{0}$, aplicou-se o teste de Mann--Whitney U à compa
     \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
 \end{table}
 
-O teste de Mann--Whitney U não indicou diferença estatisticamente significativa ($p = 1{,}000$); portanto, não há evidências para rejeitar a hipótese $H_{0}$. O Cliff's Delta na comparação agregada foi de $-0{,}003$, classificado como efeito negligível (Tabela \ref{tab:cliffs-delta}).
+\begin{figure}[!ht]
+    \SingleSpacing
+    \centering
+    \caption{Distribuição das pontuações e estatística $U$ do teste de Mann--Whitney.}
+    \includegraphics[width=\textwidth]{Figuras/grafico-mann-whitney.png}
+    \vspace{-0.4cm}
+    \caption*{Fonte: Elaboração própria.}
+    \label{fig:mann-whitney}
+\end{figure}
+
+O teste de Mann--Whitney U não indicou diferença estatisticamente significativa ($p = 1{,}000$); portanto, não há evidências para rejeitar a hipótese $H_{0}$. O Cliff's Delta na comparação agregada foi de $-0{,}003$, classificado como efeito negligível (Tabela \ref{tab:cliffs-delta}). A Figura \ref{fig:cliffs-delta} sintetiza as comparações par a par e a magnitude do efeito.
 
 \begin{table}[!ht]
     \centering
@@ -121,25 +104,37 @@ O teste de Mann--Whitney U não indicou diferença estatisticamente significativ
     \caption*{Fonte: Elaboração própria, com base na planilha de coleta do experimento.}
 \end{table}
 
+\begin{figure}[!ht]
+    \SingleSpacing
+    \centering
+    \caption{Comparações par a par e magnitude do Cliff's Delta.}
+    \includegraphics[width=\textwidth]{Figuras/grafico-cliffs-delta.png}
+    \vspace{-0.4cm}
+    \caption*{Fonte: Elaboração própria.}
+    \label{fig:cliffs-delta}
+\end{figure}
+
 \section{Discussão dos Resultados}
 \label{sec:discussao-resultados}
 
-Os resultados da Seção \ref{sec:analise-estatistica} indicam que o uso do ChatGPT durante as atividades práticas não alterou, de forma mensurável, a compreensão avaliada pelos questionários. Esse achado converge com estudos que também não identificaram impacto significativo do ChatGPT no desempenho de estudantes em disciplinas de programação e estruturas de dados \cite{kosar2024chatgpt}.
+Os resultados da Seção \ref{sec:analise-estatistica} indicam que o uso do ChatGPT durante as atividades práticas não alterou, de forma mensurável, o desempenho avaliado pelos questionários. Esse achado converge com estudos que também não identificaram impacto significativo do ChatGPT no desempenho de estudantes em disciplinas de programação e estruturas de dados \cite{kosar2024chatgpt}.
 
-A elevada familiaridade prévia dos participantes com IA generativa (Tabela \ref{tab:perfil-ia}) pode ter atenuado as diferenças entre as condições, pois a restrição ao ChatGPT durante uma atividade não elimina a experiência acumulada com a ferramenta. Além disso, a comparação agregada combina pontuações de questionários com escalas distintas, o que reforça a leitura conjunta com a Tabela \ref{tab:desempenho-topico}. As demais limitações do estudo são discutidas na Seção \ref{sec:ameacas-validade}.
+A elevada familiaridade prévia dos participantes com IA generativa (Tabela \ref{tab:perfil-ia}) pode ter atenuado as diferenças entre as condições, pois a restrição ao ChatGPT durante uma atividade não elimina a experiência acumulada com a ferramenta. Além disso, a comparação agregada combina pontuações de questionários com escalas distintas e sem normalização, o que reforça a leitura conjunta com a Tabela \ref{tab:desempenho-topico}. As demais limitações do estudo são discutidas na Seção \ref{sec:ameacas-validade}.
 
-Do ponto de vista educacional, a ausência de diferença significativa não deve ser interpretada como prova de neutralidade do ChatGPT para a aprendizagem. Os questionários avaliaram compreensão conceitual por meio de questões objetivas, o que pode não capturar efeitos sobre autonomia, depuração ou dependência da ferramenta \cite{kosmyna2025brain,delikoura2025superficial}.
+Do ponto de vista educacional, a ausência de diferença significativa não deve ser interpretada como prova de neutralidade do ChatGPT para a aprendizagem. Os questionários avaliaram desempenho por meio de questões objetivas de múltipla escolha, o que pode não capturar efeitos sobre autonomia, depuração ou dependência da ferramenta \cite{kosmyna2025brain,delikoura2025superficial}.
+
+Esses achados têm implicações distintas para os públicos envolvidos. Para os estudantes, o resultado sugere que o uso da ferramenta na prática, por si só, não garante melhor desempenho em avaliações objetivas posteriores sem apoio da IA, o que reforça a importância de estudar e revisar os conteúdos com autonomia. Para o docente, indica que permitir ou restringir o ChatGPT em uma atividade pontual pode não alterar de imediato as notas em questionários desse tipo, mas continua relevante orientar o uso crítico e combinar a ferramenta a instrumentos que avaliem implementação, justificação e depuração. Para pesquisadores que derem continuidade a esta linha, os dados motivam amostras maiores, análises complementares (por exemplo, incluindo participantes com dados parciais em um único tópico) e desenhos que separem melhor o efeito da sessão experimental da experiência prévia com IA generativa.
 
 Por fim, os achados reforçam a necessidade de investigações adicionais sobre o uso pedagógico do ChatGPT em Algoritmos e Estruturas de Dados, com amostras maiores, instrumentos mais abrangentes e observação de efeitos de longo prazo.
 
 \section{Ameaças à Validade}
 \label{sec:ameacas-validade}
 
-Algumas ameaças à validade devem ser consideradas na interpretação dos resultados. A primeira diz respeito ao tamanho da amostra, pois estudos em turmas específicas podem envolver um número limitado de participantes, o que reduz a generalização dos achados.
+Algumas ameaças à validade devem ser consideradas na interpretação dos resultados. A primeira diz respeito ao tamanho da amostra, pois estudos em turmas específicas podem envolver um número limitado de participantes, o que reduz a generalização dos achados. Em particular, a análise principal restringiu-se aos 20 participantes com participação completa; não foi conduzida, neste TCC, uma análise complementar apenas com os dados de Heap dos 25 estudantes distribuídos, o que permanece como possibilidade para trabalhos futuros.
 
 A segunda refere-se à diferença de dificuldade entre os conteúdos. Embora o desenho com grupos cruzados controle parte das assimetrias entre tópicos, ainda é possível que variações de dificuldade entre Heap e Tabelas Hash influenciem o desempenho no questionário, especialmente na comparação agregada entre condições. Além disso, diferenças prévias de conhecimento entre os estudantes podem afetar os resultados, mesmo com a inversão das condições.
 
-Também existe uma ameaça relacionada ao controle do uso do ChatGPT. Embora o laboratório tenha sido monitorado durante as atividades, não é possível garantir a ausência total de uso indevido fora do ambiente controlado. Outra limitação envolve o instrumento de avaliação: questionários objetivos permitem a comparação direta entre condições, mas podem não captar toda a profundidade da aprendizagem, especialmente aspectos como raciocínio, justificativa de decisões e capacidade de depuração.
+Também existe uma ameaça relacionada ao controle do uso do ChatGPT. Embora o laboratório tenha sido monitorado durante as atividades, não é possível garantir a ausência total de uso indevido fora do ambiente controlado. Outra limitação envolve o instrumento de avaliação: questionários objetivos permitem a comparação direta entre condições, mas podem não captar toda a profundidade da aprendizagem, especialmente aspectos como raciocínio, justificativa de decisões e capacidade de depuração. Soma-se a isso a escolha do Mann--Whitney U agregado em um desenho que, no nível individual, é pareado, conforme discutido na Seção \ref{sec:procedimentos-analise}.
 
 Por fim, os resultados devem ser interpretados considerando o contexto institucional, a linguagem de programação adotada, o perfil da turma e o período de aplicação do estudo.
 
