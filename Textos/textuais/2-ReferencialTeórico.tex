@@ -3,9 +3,7 @@
 \chapter{REFERENCIAL TEÓRICO}
 \label{chap:referencial-teorico}
 
-Este capítulo apresenta os conceitos e estudos que fundamentam a pesquisa, com ênfase em Heap, Tabelas Hash e no uso do ChatGPT em disciplinas de Algoritmos e Estruturas de Dados.
-
-
+Este capítulo apresenta os conceitos e estudos que fundamentam a pesquisa, com ênfase em Heap, Tabelas Hash, no uso do ChatGPT em disciplinas de programação e nos testes estatísticos empregados na análise dos dados.
 
 
 \section{Estrutura de Dados}
@@ -27,6 +25,16 @@ As tabelas hash são amplamente empregadas em aplicações que exigem acesso rá
 
 Segundo Cormen et al.~\cite{cormen2022introduction}, as tabelas hash representam uma das soluções mais eficientes para problemas de pesquisa dinâmica, desde que a função hash seja adequadamente projetada e o fator de carga seja mantido sob controle. Dessa forma, compreender os princípios de funcionamento das funções hash, os mecanismos de resolução de colisões e os fatores que influenciam seu desempenho é essencial para a implementação de sistemas computacionais eficientes e escaláveis.
 
+\begin{figure}[!ht]
+    \SingleSpacing
+    \centering
+    \caption{Exemplo ilustrativo de tabela hash: chaves, função hash e baldes.}
+    \includegraphics[width=0.72\textwidth]{Figuras/tabela-hash.pdf}
+    \vspace{-0.3cm}
+    \caption*{Fonte: Jorge Stolfi / Wikimedia Commons (domínio público).}
+    \label{fig:exemplo-hash}
+\end{figure}
+
 \subsection{Heap}
 
 A Heap é uma estrutura de dados hierárquica amplamente empregada em algoritmos que necessitam de acesso rápido ao maior ou ao menor elemento de um conjunto de dados. Diferentemente das árvores binárias de busca, nas quais os elementos são organizados de acordo com relações de ordem entre subárvores, a \textit{Heap} obedece a uma propriedade específica denominada propriedade de heap, que estabelece uma relação entre cada nó e seus descendentes imediatos. Essa característica permite identificar rapidamente o elemento de maior ou menor prioridade, dependendo do tipo de heap utilizada~\cite{cormen2022introduction}.
@@ -43,6 +51,16 @@ Apesar de seu elevado desempenho para operações de prioridade, a Heap não con
 
 Segundo Cormen et al.~\cite{cormen2022introduction}, as Heaps desempenham um papel fundamental no desenvolvimento de algoritmos eficientes, especialmente em problemas relacionados à ordenação, escalonamento e gerenciamento de prioridades. Assim, compreender seu funcionamento, suas propriedades e suas aplicações representa um conhecimento essencial para estudantes e profissionais da área de Computação, contribuindo para a escolha da estrutura de dados mais adequada em diferentes contextos de desenvolvimento de software.
 
+\begin{figure}[!ht]
+    \SingleSpacing
+    \centering
+    \caption{Exemplo ilustrativo de Max-Heap: representação em árvore e em vetor.}
+    \includegraphics[width=0.78\textwidth]{Figuras/max-heap.pdf}
+    \vspace{-0.3cm}
+    \caption*{Fonte: Wikimedia Commons (domínio público).}
+    \label{fig:exemplo-heap}
+\end{figure}
+
 % \label{sec:heap-tabelas-hash}
 
 % Heap é uma estrutura baseada em árvore, geralmente implementada sobre um arranjo, que mantém uma propriedade de ordem parcial entre pais e filhos. Em um \textit{max-heap}, cada nó possui chave maior ou igual às chaves de seus filhos; em um \textit{min-heap}, ocorre o inverso \cite{cormen2022introduction}. Entre suas aplicações estão filas de prioridade, seleção de elementos extremos e o algoritmo \textit{heapsort}. A implementação exige compreender a relação entre representação lógica em árvore e representação física em vetor, além de operações como inserção, remoção da raiz e reorganização da propriedade de Heap.
@@ -54,18 +72,57 @@ Segundo Cormen et al.~\cite{cormen2022introduction}, as Heaps desempenham um pap
 \section{Inteligência Artificial Generativa e ChatGPT na Educação}
 \label{sec:ia-generativa-educacao}
 
-A inteligência artificial generativa tem recebido atenção crescente na educação superior, especialmente após a popularização de sistemas capazes de gerar texto, código e explicações a partir de instruções em linguagem natural. O ChatGPT tornou-se uma das ferramentas mais utilizadas por estudantes em tarefas de programação \cite{baidoo2023education,rahman2023education}.
+A inteligência artificial generativa ganhou destaque na educação superior com sistemas capazes de gerar texto, código e explicações a partir de instruções em linguagem natural. Baidoo-Anu e Ansah~\cite{baidoo2023education} discutem oportunidades e desafios do ChatGPT no ensino, destacando potencial de apoio à aprendizagem e, ao mesmo tempo, riscos à integridade acadêmica e à avaliação tradicional. Em direção semelhante, Rahman e Watanobe~\cite{rahman2023education} analisam o ChatGPT na educação em programação, apontando benefícios no esclarecimento de dúvidas e na geração de exemplos, mas também a necessidade de uso crítico.
 
-No contexto educacional, modelos de linguagem podem oferecer explicações personalizadas, exemplos adicionais e sugestões de correção \cite{macneil2022code,sotelo2023motivation,garcia2025programming}. Entretanto, também apresentam limitações: respostas incorretas ou genéricas, risco de integridade acadêmica, aprendizagem superficial e possível redução do engajamento cognitivo quando o uso é recorrente e pouco orientado \cite{dwivedi2023chatgpt,delikoura2025superficial,kosmyna2025brain,qin2023general}. Esses aspectos reforçam a necessidade de investigar empiricamente o impacto do ChatGPT em disciplinas que exigem raciocínio e produção autônoma, como Algoritmos e Estruturas de Dados.
+No apoio à escrita e à compreensão de código, MacNeil et al.~\cite{macneil2022code} investigam explicações geradas por modelos de linguagem para trechos de programa, evidenciando o papel da ferramenta como recurso complementar --- e não substituto --- do processo de estudo. Outros trabalhos relatam efeitos sobre motivação e engajamento discente no uso de ChatGPT~\cite{sotelo2023motivation}.
+
+Em contrapartida, a literatura alerta para respostas incorretas ou genéricas, aprendizagem superficial e possível redução do engajamento cognitivo quando o uso é recorrente e pouco orientado~\cite{dwivedi2023chatgpt,delikoura2025superficial,qin2023general,kosmyna2025brain}. Esses pontos reforçam a importância de investigar empiricamente o impacto do ChatGPT em disciplinas que exigem raciocínio e produção autônoma, como Algoritmos e Estruturas de Dados.
 
 \section{ChatGPT no Ensino de Programação e em Estruturas de Dados}
 \label{sec:chatgpt-dsa}
 
-A revisão de Garcia identificou usos do ChatGPT no ensino de programação --- tutoria, geração de materiais, produção de código e feedback ---, mas também desafios como dependência excessiva e limitações técnicas das respostas \cite{garcia2025programming}. Em um estudo empírico com programação orientada a objetos, Kosar et al. não observaram impacto estatisticamente significativo no desempenho dos estudantes, embora os participantes tenham relatado utilidade no apoio à compreensão do código \cite{kosar2024chatgpt}.
+Garcia~\cite{garcia2025programming} revisa usos do ChatGPT no ensino de programação --- tutoria, geração de materiais, produção de código e feedback --- e identifica desafios recorrentes, como dependência excessiva da ferramenta e limitações técnicas das respostas. A revisão sugere que o efeito pedagógico depende fortemente do desenho da atividade e do modo de integração da IA à disciplina.
 
-Jamie et al. investigaram o ChatGPT como ferramenta complementar a monitores em Algoritmos e Estruturas de Dados, com \textit{prompts} estruturados e mediação humana, observando ganhos quando o uso foi supervisionado \cite{jamie2024dsa}. Esses resultados indicam que o impacto da ferramenta depende do desenho da atividade, do tipo de tarefa e da forma de uso, e que evidências obtidas em um tópico ou condição de uso não se generalizam automaticamente a outros contextos --- como Heap e Tabelas Hash.
+Em estudo empírico com programação orientada a objetos, Kosar et al.~\cite{kosar2024chatgpt} não observaram impacto estatisticamente significativo no desempenho dos estudantes quando o ChatGPT estava disponível, embora os participantes tenham relatado utilidade no apoio à leitura e à compreensão do código. Já Jamie et al.~\cite{jamie2024dsa} investigaram o ChatGPT como complemento a monitores em Algoritmos e Estruturas de Dados, com \textit{prompts} estruturados e mediação humana, relatando ganhos quando o uso foi supervisionado.
+
+Esses achados indicam que evidências obtidas em um tópico ou condição de uso não se generalizam automaticamente a outros contextos. Em particular, permanece aberta a questão do impacto do ChatGPT em conteúdos específicos como Heap e Tabelas Hash, avaliados por pontuação em questionários objetivos após atividades práticas --- foco deste TCC.
+
+\section{Instrumentos Estatísticos do Estudo}
+\label{sec:testes-estatisticos}
+
+A análise dos dados deste trabalho combina verificação de premissas, comparação entre condições e estimativa da magnitude do efeito. Os três instrumentos descritos a seguir são os efetivamente empregados na Metodologia e nos Resultados.
+
+\subsection{Teste de Shapiro--Wilk}
+
+O teste de Shapiro--Wilk avalia se uma amostra pode ser considerada proveniente de uma distribuição normal~\cite{sheskin2003handbook}. A estatística do teste é dada por:
+
+\begin{equation}
+W = \frac{\left(\sum_{i=1}^{n} a_i\, x_{(i)}\right)^{2}}{\sum_{i=1}^{n} (x_i - \bar{x})^{2}},
+\end{equation}
+
+em que $x_{(i)}$ são as observações ordenadas, $\bar{x}$ é a média amostral e $a_i$ são coeficientes tabulados em função do tamanho amostral $n$. Valores de $W$ próximos de $1$ indicam compatibilidade com a normalidade. No presente estudo, o teste é aplicado às pontuações de cada condição experimental (com e sem ChatGPT). A decisão orienta a escolha de procedimentos posteriores: violações relevantes da normalidade, em conjunto com amostra reduzida, favorecem o uso de métodos não paramétricos.
+
+\subsection{Teste de Mann--Whitney U}
+
+O teste de Mann--Whitney U (também conhecido como teste de Wilcoxon--Mann--Whitney para duas amostras) compara duas amostras independentes quanto à tendência central, com base em postos, sem exigir normalidade~\cite{sheskin2003handbook,wohlin2012experimentation}. Uma forma usual de calcular a estatística $U$ é:
+
+\begin{equation}
+U = n_1 n_2 + \frac{n_1(n_1 + 1)}{2} - R_1,
+\end{equation}
+
+em que $n_1$ e $n_2$ são os tamanhos das duas amostras e $R_1$ é a soma dos postos da primeira amostra. Neste TCC, após a reorganização das pontuações por condição (com versus sem ChatGPT), o Mann--Whitney U constitui o procedimento principal para avaliar a hipótese nula de ausência de diferença mensurável entre as condições.
+
+\subsection{Cliff's Delta}
+
+Além da significância estatística, estima-se o tamanho do efeito por meio do Cliff's Delta ($\delta$), medida não paramétrica que expressa a probabilidade de uma observação de um grupo superar a de outro~\cite{kitchenham2019statistical}:
+
+\begin{equation}
+\delta = \frac{\#(x_i > y_j) - \#(x_i < y_j)}{n_1 \cdot n_2},
+\end{equation}
+
+em que $x_i$ e $y_j$ são as observações das duas condições e $\#$ denota a contagem dos pares satisfazendo a desigualdade correspondente. O coeficiente complementa o valor-$p$: mesmo quando não se rejeita $H_0$, $\delta$ informa se a diferença observada é, na prática, negligível, pequena, média ou grande, segundo limiares consolidados na literatura de experimentos em Engenharia de Software~\cite{kitchenham2019statistical}.
 
 \section{Síntese do Referencial}
 \label{sec:sintese-referencial}
 
-O referencial evidencia que o ChatGPT pode apoiar a aprendizagem, mas seu uso sem orientação pode favorecer dependência e respostas superficiais. Ainda há pouca evidência empírica sobre o impacto da ferramenta em tópicos específicos de Algoritmos e Estruturas de Dados. Este TCC investiga esse impacto em Heap e Tabelas Hash por meio de um experimento com grupos cruzados e questionários aplicados após cada atividade prática.
+O referencial evidencia que Heap e Tabelas Hash exigem articulação entre conceito, complexidade e implementação, e que o ChatGPT pode apoiar o estudo de programação, embora seu impacto dependa do contexto e do modo de uso. Ainda há pouca evidência empírica sobre o efeito da ferramenta nesses tópicos específicos quando o desempenho é medido por pontuação em questionários objetivos. Este TCC investiga esse impacto por meio de um experimento com grupos cruzados, comparando as condições com e sem ChatGPT com o suporte dos testes de Shapiro--Wilk, Mann--Whitney U e Cliff's Delta.
