@@ -23,9 +23,11 @@ alwaysApply: true
 
 ## Tema E Objetivo
 
-- O TCC investiga o impacto do uso do ChatGPT na **compreensao** de estudantes da disciplina de Algoritmos e Estruturas de Dados, com foco em **Heap e Tabelas Hash**.
+- O TCC investiga o impacto do uso do ChatGPT no **desempenho** de estudantes da disciplina de Algoritmos e Estruturas de Dados, com foco em **Heap e Tabelas Hash**.
 - O experimento ja foi realizado; escrever em tom de **estudo concluido**, reportando dados, analises e limitacoes.
-- A variavel principal e a compreensao, avaliada por **questionarios objetivos** aplicados ao final de **cada** atividade pratica (Heap e Tabelas Hash), sem apoio do ChatGPT.
+- A variavel principal e o **desempenho**, medido pela **pontuacao** em **questionarios objetivos** aplicados ao final de **cada** atividade pratica (Heap e Tabelas Hash), sem apoio do ChatGPT.
+- Preferir a formulacao: *desempenho dos estudantes, medido pela pontuacao nos questionarios*.
+- Evitar o termo **compreensao** como variavel principal (sem base teorica explicita no texto). Usar **desempenho**, **pontuacao** ou **nota** conforme o contexto.
 - **Nao faz parte deste TCC:** analise de similaridade de codigo, MOSS, notas finais de disciplina ou comparacao com outros topicos (BST, AVL, ArrayList, LinkedList etc.).
 
 ## Metodologia Adotada
@@ -34,8 +36,8 @@ alwaysApply: true
 - Atividades praticas com repositorios (codigo-base, testes automatizados, laboratorio controlado).
 - TCLE com perguntas sobre familiaridade previa com IA generativa (dados na Metodologia).
 - **Objetivos:** geral + tres especificos (caracterizar amostra; comparar condicoes; discutir resultados). Problema e pergunta de pesquisa explicitos na Introducao.
-- **Hipótese unica:** $H_0$ — nao ha diferencia significativa na compreensao entre condicoes com e sem ChatGPT.
-- **Compreensao:** operacionalizada como pontuacao em questionarios objetivos pos-atividade.
+- **Hipotese unica:** $H_0$ — nao ha diferenca significativa no desempenho (pontuacao nos questionarios) entre condicoes com e sem ChatGPT.
+- **Desempenho / pontuacao:** operacionalizado como pontuacao em questionarios objetivos pos-atividade.
 - **Analise estatistica:** reorganizacao das pontuacoes por condicao (cada participante: 1 nota com GPT, 1 sem); **Mann-Whitney U agregado** e **Cliff's Delta** como analises principais; Shapiro-Wilk para normalidade. Wilcoxon **nao** faz parte deste TCC.
 - Amostra: 25 distribuidos, **20 participacao completa**, 5 desistentes (faltou secao Hash).
 
@@ -53,7 +55,9 @@ alwaysApply: true
 
 ## Diretrizes De Escrita
 
-- Priorizar o termo **compreensao** (instrumento e hipotese); "aprendizagem" pode aparecer no titulo ou em discussao mais ampla.
+- Priorizar **desempenho** / **pontuacao** / **nota** (instrumento e hipotese). Evitar **compreensao** como termo central da variavel dependente.
+- "Aprendizagem" pode aparecer no titulo ou em discussao mais ampla, sem substituir a operacionalizacao por pontuacao.
+- Ao editar capitulos futuros (Metodologia, Resultados, Conclusoes, slides, roteiros), alinhar a linguagem a essa terminologia.
 - Nao repetir entre capitulos: perfil do TCLE (tabela na Metodologia; Resultados referencia), crossover, limitacoes de amostra.
 - Manter linguagem academica em portugues brasileiro, frases claras e objetivas.
 - Preservar integridade academica: citar fontes, evitar plagio, nao afirmar resultados diferentes dos dados coletados.
