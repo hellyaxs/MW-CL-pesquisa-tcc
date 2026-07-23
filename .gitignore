@@ -3,3 +3,4 @@
 /modelo-iza/
 __pycache__/
 .cursor/
+.local
